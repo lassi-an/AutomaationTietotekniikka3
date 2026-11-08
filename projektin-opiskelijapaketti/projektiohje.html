@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="fi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ohjelmistoprojekti: ohje ja arviointi</title>
+<style>
+body{font:18px/1.65 system-ui,sans-serif;color:#193247;background:#f5f7fa;margin:0}
+main{max-width:1100px;margin:auto;padding:2rem;background:white}
+h1,h2,h3,h4{line-height:1.25;color:#153e57;scroll-margin-top:1rem}
+h2{margin-top:2.5rem;border-bottom:2px solid #c9dbe7;padding-bottom:.5rem}
+a{color:#115d86}code{font-family:Consolas,monospace}.toc{background:#eaf2f6;padding:.5rem 1.2rem;border-radius:.5rem}
+@media(max-width:600px){body{font-size:16px}main{padding:1rem}table{font-size:.85rem}}
+@media print{body{font-size:10pt;background:white}main{max-width:none;padding:0}h2{break-before:page}}
+</style></head><body><main>
+<div lang="fi" style="line-height:1.65;overflow-wrap:anywhere;">
+<h1 id="ohjelmistoprojekti">Ohjelmistoprojekti</h1>
+<h3 id="aloita-tasta">Aloita tästä</h3>
+<ol>
+<li>Lue projektiohje ja arviointikriteerit. Tarkista määräajat, opettajan GitHub-tunnus ja palautuspaikat Moodlesta.</li>
+<li>Valitse parisi kanssa aihe ja rajaa yksi toimiva käyttötapaus.</li>
+<li>Luo oma yhteinen projektirepo. Ota halutessasi opiskelijapaketin <code>projektipohja/</code>-kansion sisältö repon juureen. Älä lisää koko jakelupakettia repoosi.</li>
+<li>Täytä pohjat oman työnne tiedoilla. Pohja ei ole valmis vastaus eikä pelkkä otsikoiden säilyttäminen riitä näytöksi.</li>
+<li>Pidä repo ja dokumentit ajan tasalla työn aikana. Tarkista palautuslistat ennen Moodle-palautuksia.</li>
+</ol>
+<p>Moodle-osiossa on ladattavana <code>projektin-opiskelijapaketti.zip</code>. Paketti sisältää tämän sivun, ohjeet Markdownina ja projektirepon pohjan. Ohjeen voi lukea selaimella ilman asennuksia. Ladatun sivun ulkoiset linkit ja verkkopalvelut tarvitsevat verkkoyhteyden.</p>
+<p><strong>Palautusten päivämäärät ja yhteiset työskentelysäännöt ovat Moodlessa.</strong> Tämä materiaali ei aseta uusia määräaikoja tai korvauskäytäntöjä.</p>
+<h3 id="mita-palautetaan-ja-minne">Mitä palautetaan ja minne?</h3>
+<table style="border-collapse:collapse;width:100%;margin:1em 0;">
+<thead>
+<tr>
+<th scope="col" style="border:1px solid #aebdca;padding:.6em;text-align:left;background:#edf3f8;">Suoritus</th>
+<th scope="col" style="border:1px solid #aebdca;padding:.6em;text-align:left;background:#edf3f8;">Tallennuspaikka</th>
+<th scope="col" style="border:1px solid #aebdca;padding:.6em;text-align:left;background:#edf3f8;">Moodleen annettavat tiedot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Parin projektiversio ja Markdown-dokumentit</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Oma Git-repo</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Tekijät, repon URL, täydellinen commit-tunniste ja videolinkki</td>
+</tr>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Parin 5–7 minuutin video</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Oppilaitoksen OneDrive</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Katselulinkki myös <code>docs/04-palautus.md</code>:hen; oikeudet opettajalle ja vertaisarvioijille</td>
+</tr>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Kolmen muun parin videoiden arviointi</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Moodlen henkilökohtainen palautus</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Jokaisesta videosta oma havaintoihin perustuva palaute</td>
+</tr>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Henkilökohtainen reflektio</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Moodlen erillinen tekstikenttä</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Oma pohdinta, ei yhteiseen repoon</td>
+</tr>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Vapaaehtoinen toimintasuunnitelma</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Repon <code>docs/05-toimintasuunnitelma.md</code></td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Täydennyksen oma täydellinen commit-tunniste, alkuperäistä tunnistetta korvaamatta</td>
+</tr>
+</tbody>
+</table>
+<p>Täydellistä commit-tunnistetta ei kirjoiteta sen saman commitin sisältöön: kopioi tunniste GitHubin historiasta commitin valmistuttua ja ilmoita se Moodlessa. Toimintasuunnitelma voi tuoda enintään 12 pistettä projektin 60 pisteen sisällä, mutta se ei korvaa alkuperäisten osa-alueiden vähimmäisnäyttöjä.</p>
+<div class="toc">
+<ul>
+<li><a href="#ohjelmistoprojekti">Ohjelmistoprojekti</a><ul>
+<li><a href="#ohjelmistotuotannon-projekti-tekoalyavusteisesti">Ohjelmistotuotannon projekti tekoälyavusteisesti</a></li>
+<li><a href="#projektin-arviointikriteerit">Projektin arviointikriteerit</a></li>
+<li><a href="#arvosanan-laskenta">Arvosanan laskenta</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="ohjelmistotuotannon-projekti-tekoalyavusteisesti">Ohjelmistotuotannon projekti tekoälyavusteisesti</h2>
+<p>Arviointiperusteet ovat <a href="#projektin-arviointikriteerit">projektin arviointikriteereissä</a> ja <a href="#arvosanan-laskenta">arvosanan laskennassa</a>. Palautusajat ja yhteiset työskentelyohjeet ovat Moodlen kurssijärjestelysivulla.</p>
+<h3 id="tavoite-ja-tehtava">Tavoite ja tehtävä</h3>
+<p>Suunnittele, määrittele, toteuta, testaa ja esittele parisi kanssa toimiva ohjelmistokokonaisuus. Valitkaa itse aihe, joka kiinnostaa teitä ja jolle pystytte kuvaamaan selkeän käyttäjän, tarpeen ja hyödyn. Myös harrastukseen tai omaan arkeen liittyvä aihe sopii. Kaupallista kannattavuutta, teollista tietolähdettä tai automaatiokytkentää ei edellytetä.</p>
+<p>Tavoitteena on osoittaa koko ohjelmistotuotannon ketju: käyttäjätarve ohjaa vaatimuksia, vaatimukset toteutusta ja testaus osoittaa niiden täyttymisen. Validoinnissa perustelette, vastaako ratkaisu alkuperäiseen tarpeeseen.</p>
+<p>Tekoälyä saa ja on tarkoitus käyttää projektissa. Vastaatte sen avulla tekemistänne ratkaisuista, tarkistatte tuotokset ja osaatte selittää oman työnne. Teknologia ja ratkaisutapa ovat valittavissanne. Agenttiympäristö tai maksullinen AI-tilaus ei ole edellytys.</p>
+<p>Kurssin automaatioesimerkeissä painottuvat tiedonkeruu, käsittely, analyysi ja visualisointi. PLC-ohjelmointi ei ole projektivaatimus. Pilvipalveluja ja Big Dataa käsitellään yhteisessä teoriassa, tehtävissä ja tentissä; niitä ei tarvitse toteuttaa omassa projektissa. Pilvitiliä tai pilveen käyttöönottoa ei vaadita.</p>
+<h3 id="rajaa-toteutettava-kokonaisuus">Rajaa toteutettava kokonaisuus</h3>
+<p>Valitkaa yksi keskeinen käyttäjän tavoite, joka voidaan toteuttaa päästä päähän ja näyttää toiminnassa. Pelkkä idea, käyttöliittymäluonnos tai AI:n tuottama koodi ilman toimivuuden näyttöä ei riitä.</p>
+<p>Projektista pitää käydä ilmi:</p>
+<ul>
+<li>kenelle ratkaisu tehdään, mikä ongelma ratkaistaan ja mitä hyötyä siitä on;</li>
+<li>mitä käyttäjä voi valmiilla ohjelmistolla tehdä;</li>
+<li>mitkä ovat tärkeimmät testattavat vaatimukset ja hyväksymiskriteerit;</li>
+<li>miten ohjelmisto käynnistetään, miten sen toimintaa tarkistetaan ja mitkä ovat tunnetut rajoitukset;</li>
+<li>miten kumpikin opiskelija osallistui suunnitteluun, toteutukseen ja tarkistamiseen.</li>
+</ul>
+<p>Jos tarvitsette dataa, voitte käyttää esimerkiksi itse tuotettua synteettistä dataa, tiedostoa tai paikallista simulaattoria. Kuvatkaa datan alkuperä, käyttöoikeus tai oma tuotantotapa sekä olennaiset oletukset ja rajoitukset. Projektin pitää olla opettajan kokeiltavissa README:n ohjeella ilman teidän henkilökohtaisia maksullisia tunnuksianne.</p>
+<p>Rajattu ja perusteltu toteutus voi menestyä yhtä hyvin kuin laaja sovellus. Ominaisuuksien, koodirivien tai promptien määrä ei tuo sellaisenaan pisteitä.</p>
+<h3 id="tyon-vaiheet">Työn vaiheet</h3>
+<h4 id="1-tarve-arvolupaus-ja-kayttajaskenaariot">1. Tarve, arvolupaus ja käyttäjäskenaariot</h4>
+<p>Kuvatkaa ongelma, käyttäjä ja nykyinen toimintatapa. Perustelkaa, mitä hyötyä ratkaisusta olisi. Kuvatkaa 1–3 konkreettista käyttäjäskenaariota: kuka tekee, mitä tavoittelee, missä tilanteessa ja millaisen tuloksen saa. Oma todellinen käyttötarve on kelvollinen lähtökohta.</p>
+<h4 id="2-vaatimukset-ja-rajaus">2. Vaatimukset ja rajaus</h4>
+<p>Kirjatkaa projektin tavoite, toteutettava vähimmäiskokonaisuus, ulkopuolelle jätettävät asiat sekä keskeiset oletukset ja riskit. Määritelkää noin 3–5 tärkeintä toiminnallista vaatimusta ja tarpeelliset laatuvaatimukset. Määrä on rajausohje, ei pisteperuste.</p>
+<p>Antakaa vaatimuksille tunnisteet, esimerkiksi V1 ja V2. Kirjatkaa jokaiselle hyväksymiskriteeri: millä havainnolla voidaan osoittaa, että vaatimus täyttyy? Vaatimuksia saa tarkentaa projektin edetessä; dokumentoikaa merkittävien muutosten syyt. Älkää muuttako toteutumatta jääneitä vaatimuksia jälkikäteen onnistuneiksi ilman perusteltua rajauspäätöstä.</p>
+<h4 id="3-alkuprompt-ja-jatkuva-ai-tyoskentely">3. Alkuprompt ja jatkuva AI-työskentely</h4>
+<p>Tallentakaa todellisuudessa käyttämänne alkuprompt Markdownina. Sen tulee perustua tavoitteeseen, käyttäjiin, vaatimuksiin ja rajauksiin. Alkupromptin ei tarvitse tuottaa koko sovellusta kerralla.</p>
+<p>Agenttisessa ympäristössä luokaa repon juureen <strong><code>AGENTS.md</code></strong>, jossa kuvataan projektin pysyvät ohjeet: tavoite ja rajat, työskentelykäytännöt sekä muutosten katselmointi ja testaus. Ohjeen tulee vastata todellista työtapaa. Jos ympäristö ei lue tiedostoa automaattisesti, kuvatkaa, miten ohje annetaan sille.</p>
+<p>Ilman agenttista ympäristöä kuvatkaa vastaava prosessi tiedostossa <code>docs/02-ai-tyoskentely.md</code>: miten annatte kontekstin, jaatte työn tehtäviin, tarkistatte ehdotukset ja siirrätte hyväksytyt ratkaisut toteutukseen. Tällöin <code>AGENTS.md</code> ei ole pakollinen. Näitä tapoja arvioidaan samoilla tavoitteilla.</p>
+<p>Listatkaa kaikki projektissa käytetyt AI-työkalut, myös dokumentoinnissa käytetyt. Sopiva taulukko on:</p>
+<table style="border-collapse:collapse;width:100%;margin:1em 0;">
+<thead>
+<tr>
+<th scope="col" style="border:1px solid #aebdca;padding:.6em;text-align:left;background:#edf3f8;">Työkalu</th>
+<th scope="col" style="border:1px solid #aebdca;padding:.6em;text-align:left;background:#edf3f8;">Malli tai versio, jos tiedossa</th>
+<th scope="col" style="border:1px solid #aebdca;padding:.6em;text-align:left;background:#edf3f8;">Käyttötarkoitus</th>
+<th scope="col" style="border:1px solid #aebdca;padding:.6em;text-align:left;background:#edf3f8;">Miten tuotoksia tarkistettiin?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Käytetty työkalu</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Tiedossa oleva tieto tai ”ei tiedossa”</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Konkreettinen käyttötapa</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Oma tarkistuskäytäntö</td>
+</tr>
+</tbody>
+</table>
+<p>Kuvatkaa lisäksi yksi konkreettinen tilanne, jossa hyväksyitte, korjasitte tai hylkäsitte AI:n ehdotuksen. Perustelkaa ratkaisu havainnoilla. Koko keskusteluhistoriaa ei tarvitse palauttaa. Älkää syöttäkö työkaluihin salasanoja, avaimia tai henkilötietoja.</p>
+<h4 id="4-toteutus-ja-yhteistyo-gitissa">4. Toteutus ja yhteistyö Gitissä</h4>
+<p>Toteuttakaa toimiva kokonaisuus ja pitäkää dokumentaatio ajan tasalla. Käyttäkää yhteistä projektirepoa työn aikana, ei vain lopputuloksen palautuspaikkana. Tallentakaa ymmärrettäviä muutoksia ja katselmoikaa myös toistenne työtä. Molempien pitää voida osoittaa oma osallistumisensa. Commitien lukumäärää ei pisteytetä.</p>
+<p>README kertoo käynnistyksen, riippuvuudet, tarvittavat asetukset, esimerkkikäytön ja testien suorittamisen. Tarvittavat asetusesimerkit eivät saa sisältää oikeita salaisuuksia. Merkitkää muualta otetun koodin ja aineiston lähteet sekä käyttöehdot niiden edellyttämällä tavalla.</p>
+<h4 id="5-testaus-ja-validointi">5. Testaus ja validointi</h4>
+<p>Testatkaa tärkeimmät vaatimukset sekä vähintään yksi projektinne kannalta olennainen virhe- tai rajatapaus. Menetelmä voi olla automatisoitu testi tai toistettava käsin tehtävä koe. Menetelmä valitaan tavoitteen mukaan.</p>
+<p>Kirjatkaa testin yhteys vaatimukseen, testitapa tai syöte, odotettu tulos, havaittu tulos ja johtopäätös. Raportoikaa myös epäonnistumiset ja tunnetut puutteet. AI:n ilmoitus ”testattu” ei yksin ole testinäyttö.</p>
+<p>Validoinnissa palatkaa käyttäjäskenaarioon: pystyykö käyttäjä saavuttamaan alkuperäisen tavoitteen ja mitä hyötyä siitä syntyy? Kuvatkaa kokeilu tai muu perusteltu havainto. Ulkopuolista asiakasta ei vaadita; jos kokeilette itse, kertokaa tämän rajoitus. Tekninen testaus ja käyttäjätarpeen arviointi käsitellään erikseen.</p>
+<h3 id="repon-vakiorakenne-ja-palautettavat-dokumentit">Repon vakiorakenne ja palautettavat dokumentit</h3>
+<p>Kaikki itse laatimanne projektin tekstidokumentit ovat Markdown-tiedostoja opiskelijaprojektin omassa Git-repossa. Koodi, data, kuvat ja asetustiedostot käyttävät tarkoitukseensa sopivia muotoja. Reflektio, Moodle-esitehtävät ja henkilökohtaiset vertaisarvioinnit palautetaan Moodlessa.</p>
+<pre style="white-space:pre-wrap;overflow-wrap:anywhere;background:#f1f5f8;padding:1em;border-left:4px solid #245b78;"><code class="language-text">projektin-nimi/
+├── README.md
+├── AGENTS.md                       # agenttisessa ympäristössä
+├── .gitignore
+├── docs/
+│   ├── 01-projektikuvaus.md
+│   ├── 02-ai-tyoskentely.md
+│   ├── 03-testaus-ja-validointi.md
+│   ├── 04-palautus.md
+│   ├── 05-toimintasuunnitelma.md    # jos täydennätte projektipisteitä
+│   └── kuvat/                      # tarvittaessa
+└── toteutuksen tiedostot ja kansiot
+</code></pre>
+<table style="border-collapse:collapse;width:100%;margin:1em 0;">
+<thead>
+<tr>
+<th scope="col" style="border:1px solid #aebdca;padding:.6em;text-align:left;background:#edf3f8;">Tiedosto</th>
+<th scope="col" style="border:1px solid #aebdca;padding:.6em;text-align:left;background:#edf3f8;">Mitä siihen kirjoitetaan?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;"><code>README.md</code></td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Projektin nimi ja tekijät, tarkoitus, käynnistys, käyttö ja testaus; toteutuksen ja testien sijainnit sekä linkit alla oleviin dokumentteihin</td>
+</tr>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;"><code>01-projektikuvaus.md</code></td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Tarve ja arvolupaus, käyttäjäskenaariot, vaatimukset ja hyväksymiskriteerit, rajaus, keskeinen rakenne sekä oletukset</td>
+</tr>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;"><code>02-ai-tyoskentely.md</code></td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Alkuprompt, työkaluluettelo, työnjako ja kummankin konkreettinen osuus, AI-tuotoksen tarkistusesimerkki; linkki <code>AGENTS.md</code>:hen tai vastaava prosessikuvaus</td>
+</tr>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;"><code>03-testaus-ja-validointi.md</code></td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Vaatimuksiin sidotut testit ja tulokset, validointi käyttäjätarpeeseen nähden sekä tunnetut puutteet</td>
+</tr>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;"><code>04-palautus.md</code></td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Palautuspäivä, videolinkki ja mahdolliset erityisohjeet arvioijalle</td>
+</tr>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;"><code>05-toimintasuunnitelma.md</code></td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Palautteen analyysi ja perusteltu jatkokehityssuunnitelma</td>
+</tr>
+</tbody>
+</table>
+<p>Numeroidut dokumentit ovat <code>docs/</code>-kansiossa. Älkää kopioiko samaa sisältöä useaan tiedostoon: käyttäkää linkkejä. Toteutuksen kansiot saavat noudattaa valitun teknologian käytäntöjä. Tyhjiä kansioita ei vaadita. Kirjoittakaa tiiviisti; dokumenttien sivumäärää ei arvioida.</p>
+<h3 id="projektivideo-ja-vertaisarviointi">Projektivideo ja vertaisarviointi</h3>
+<p>Tehkää parina <strong>5–7 minuutin video</strong>. Esitelkää ongelma ja käyttäjätarve, yksi toimiva keskeinen käyttötapaus, yksi testauksen tulos ja tärkein tunnettu rajoitus. Molemmat opiskelijat selittävät oman osuutensa. Ruuduntallennus puheella riittää; editointia tai esiintymisen laatua ei pisteytetä.</p>
+<p>Tallentakaa video oppilaitoksen OneDriveen ja lisätkää linkki <code>04-palautus.md</code>:hen. Videota ei tallenneta Gitiin. Varmistakaa opettajan ja määrättyjen vertaisarvioijien katseluoikeus. Videon tulee esittää samaa versiota kuin projektipalautus.</p>
+<p>Jokainen opiskelija katsoo <strong>kolmen muun parin videon</strong> Moodlessa annetun jaon mukaan ja palauttaa jokaisesta oman arvionsa:</p>
+<ol>
+<li>Mikä käyttötapaus näytettiin, ja mikä konkreettinen havainto tuki toimivuutta?</li>
+<li>Mitä testauksesta ja rajoituksista kävi ilmi?</li>
+<li>Mikä olisi yksi perusteltu kehityskohde?</li>
+</ol>
+<p>Vertaisarviointi on henkilökohtainen suoritus, vaikka projekti tehdään parina. Vertaisarvioijat eivät määrää projektin arvosanaa. Palautteesta tunnistetaan kehittämismahdollisuuksia.</p>
+<h3 id="toimintasuunnitelma-projektipisteiden-taydentamiseen">Toimintasuunnitelma projektipisteiden täydentämiseen</h3>
+<p>Vertaispalautteen saamisen jälkeen voitte tehdä parina enintään yhden sivun toimintasuunnitelman saamanne palautteen perusteella. Suunnitelma voi täydentää enintään 12 projektipistettä projektin 60 pisteen rajan sisällä. Täydennys huomioidaan ennen projektin arvosanan määritystä; pisteytys on kuvattu arviointikriteereissä: palautteen analyysi, toimenpiteiden toteutuskelpoisuus ja onnistumisen tarkistaminen, kustakin 0–4 pistettä. Toteutusta tai uutta videota ei vaadita.</p>
+<p>Valitkaa 1–3 olennaista kehityskohdetta. Kirjatkaa kullekin:</p>
+<ul>
+<li>mikä palautteen havainto on lähtökohtana ja miksi se on olennainen;</li>
+<li>mitä konkreettisesti muutettaisiin ja missä järjestyksessä;</li>
+<li>kuka vastaisi muutoksesta ja mikä on realistinen työmäärä;</li>
+<li>miten onnistuminen testattaisiin tai muuten todettaisiin.</li>
+</ul>
+<p>Myös palautteen hylkääminen voidaan perustella. Jos ette saa vertaispalautetta, käyttäkää työpajassa toisen parin katselmointia. Tallentakaa suunnitelma tiedostoon <code>docs/05-toimintasuunnitelma.md</code> ja palauttakaa sen version tunniste Moodleen erikseen. Alkuperäisen projektin palautusversiota ei muuteta.</p>
+<h3 id="oma-tyo-ja-henkilokohtainen-reflektio">Oma työ ja henkilökohtainen reflektio</h3>
+<p>Oma työ ja oppiminen arvioidaan dokumentoidun oman osuuden, Git-historian ja katselmointien, projektivideon oman osuuden sekä henkilökohtaisen reflektion perusteella. Kurssilla ei järjestetä erillisiä henkilökohtaisia demoja tai näyttökeskusteluja. Kuvaa konkreettinen työsi, perustele ratkaisut ja selitä niiden tarkistaminen projektidokumenteissa ja videolla.</p>
+<p>Palauta lisäksi oma reflektiosi <strong>Moodlen erilliseen tekstikenttään</strong>. Reflektiota ei tallenneta yhteiseen repoon. Sopiva laajuus on noin 200–400 sanaa; sisältö ratkaisee. Käsittele:</p>
+<ul>
+<li>mitä itse teit ja miten se näkyy projektissa;</li>
+<li>yksi perusteltu onnistuminen ja yksi vaikeus tai virhe;</li>
+<li>miten AI auttoi tai johti harhaan ja miten tarkistit tuloksen;</li>
+<li>mitä opit ja mitä tekisit seuraavalla kerralla toisin.</li>
+</ul>
+<p>Reflektio perustuu omiin kokemuksiisi. Jos käytät AI:ta kielenhuoltoon tai jäsentelyyn, kerro siitä tekstikentän lopussa. Älä korvaa omaa pohdintaa keksityillä kokemuksilla. Reflektio arvioidaan yhdessä dokumentoidun oman työn ja projektivideon oman osuuden kanssa.</p>
+<h3 id="aikataulu-ja-moodle-palautus">Aikataulu ja Moodle-palautus</h3>
+<p>Opetuspäivät ja projektin palautusten vahvistetut määräajat ovat Moodlen kurssijärjestelysivulla ja palautusaktiviteeteissa. Projektin eteneminen on seuraava:</p>
+<ol>
+<li>Pari ja aihe valitaan, ja yhteinen Git-työskentely aloitetaan. Määrittely aloitetaan määrittelytyöpajassa; valmista projektikuvausta ei edellytetä ennen sitä.</li>
+<li>Projektikuvaus, alkuprompt ja alustavat jatkuvat AI-ohjeet tallennetaan repoon; repon linkki palautetaan Moodleen.</li>
+<li>Toteutusta ja määrittelyä tarkennetaan, testaus tehdään ja kummankin oma työ dokumentoidaan.</li>
+<li>Arvioitava projektiversio dokumentteineen ja video palautetaan.</li>
+<li>Kumpikin palauttaa henkilökohtaiset vertaisarvioinnit ja reflektion.</li>
+<li>Mahdollinen toimintasuunnitelma palautetaan itsenäisesti vertaispalautteen jälkeen.</li>
+</ol>
+<p>Ensimmäiselle opetuskerralle ei ole esitehtävää. Muiden kertojen esitehtävät ovat pakollisia mutta arvioimattomia, ja ne tehdään Moodlen ohjeiden mukaan. EXAM-tentin aikataulu ilmoitetaan erikseen.</p>
+<p>Projektin yhteisessä Moodle-palautuksessa ilmoitetaan tekijät, repon URL, arvioitavan version <strong>täydellinen commit-tunniste</strong> ja videolinkki. Tagia voi käyttää apuna, mutta tallentakaa myös sen osoittama commit-tunniste. Varmistakaa opettajan pääsy yksityiseen repoon ennen määräaikaa. GitHub-tunnus ja käyttöoikeuksien järjestely julkaistaan Moodlessa vahvistettujen ohjeiden mukaan.</p>
+<p>Toimintasuunnitelman täydentävä palautus ilmoittaa oman commit-tunnisteensa. Vanhaa tunnistetta ei korvata. Opettajan arviointi ja henkilökohtainen palaute annetaan oppilaitoksen järjestelmässä.</p>
+<p>Jos repo, video tai käynnistys ei ole arvioijan käytettävissä, toimittakaa puuttuva pääsy tai korjattu palautustieto opettajan ohjeella. Myöhästyneiden, puuttuvien ja hylättyjen suoritusten täydennysajat sekä puuttuvien henkilökohtaisten palautusten täydennysohjeet julkaistaan erikseen ennen tehtävän avaamista; niistä ei aseteta tässä ohjeessa automaattista pistevähennystä.</p>
+<h3 id="tarkista-ennen-palautusta">Tarkista ennen palautusta</h3>
+<ul>
+<li>README johtaa kaikkiin arvioitaviin osiin ja käynnistysohje on kokeiltu.</li>
+<li>Vaatimusten, testien ja validoinnin yhteys on näkyvissä.</li>
+<li>Alkuprompt, jatkuva AI-työskentely ja käytetyt työkalut on dokumentoitu.</li>
+<li>Molempien tekeminen näkyy, ja kumpikin ymmärtää oman työnsä.</li>
+<li>Repo ja video ovat oikeilla käyttöoikeuksilla ja esittävät samaa palautusversiota.</li>
+<li>Projektidokumentit ovat Markdownia; reflektio palautetaan erikseen Moodleen.</li>
+</ul>
+<h2 id="projektin-arviointikriteerit">Projektin arviointikriteerit</h2>
+<p>Tämä dokumentti täydentää <a href="#ohjelmistotuotannon-projekti-tekoalyavusteisesti">projektiohjetta</a>. Arvosanojen muunnosrajat ja painotetun keskiarvon laskenta on kuvattu <a href="#arvosanan-laskenta">arvosanan laskennassa</a>.</p>
+<h3 id="arvioinnin-perusta">Arvioinnin perusta</h3>
+<p>Arviointi kohdistuu tarpeen, vaatimusten, toteutuksen, testauksen ja validoinnin muodostamaan kokonaisuuteen. Aiheenvalinta on vapaa. Harrasteaihe ja teollinen aihe arvioidaan samoilla perusteilla. Teknologia, maksullinen työkalu, agenttiympäristö, AI-tuotoksen määrä tai näyttävä video eivät itsessään tuo lisäpisteitä.</p>
+<p>Sovittu malli: projekti, oma työ ja oppiminen sekä EXAM-tentti saavat kukin arvosanan 0–5. Painot ovat 60 %, 15 % ja 25 %. Näiden arvosanoista lasketaan painotettu keskiarvo; eri osasuoritusten raakapisteitä ei summata kurssipisteiksi. Tämän dokumentin 60 ja 15 pistettä ovat projektin ja oman työn sisäiset arviointiasteikot, eivät arvosanan laskentaan suoraan lisättäviä kurssipisteitä.</p>
+<p><a href="#arvosanan-laskenta">Arvosanan laskenta</a> sisältää hyväksytyt muunnosrajat, hyväksymisehdot ja pyöristyssäännön. Jokainen osasuoritus hyväksytään erikseen.</p>
+<h3 id="1-parin-yhteinen-projekti-060-pistetta">1. Parin yhteinen projekti, 0–60 pistettä</h3>
+<p>Arvioidaan viisi osa-aluetta. Jokaisesta annetaan 0, 3, 6, 9 tai 12 pistettä seuraavien kuvausten mukaan. Valitaan korkein taso, jonka olennainen näyttö kokonaisuutena täyttyy; lyhyt perustelu kertoo mahdolliset puutteet. Sama näyttö ei saa pisteitä kahteen kertaan: esimerkiksi testiraportin sisältö arvioidaan D:ssä ja sen löydettävyys E:ssä.</p>
+<table style="border-collapse:collapse;width:100%;margin:1em 0;">
+<thead>
+<tr>
+<th scope="col" style="border:1px solid #aebdca;padding:.6em;text-align:left;background:#edf3f8;">Osa-alue ja näyttö</th>
+<th scope="col" style="border:1px solid #aebdca;padding:.6em;text-align:left;background:#edf3f8;">6 p: perustaso</th>
+<th scope="col" style="border:1px solid #aebdca;padding:.6em;text-align:left;background:#edf3f8;">9 p: hyvä taso</th>
+<th scope="col" style="border:1px solid #aebdca;padding:.6em;text-align:left;background:#edf3f8;">12 p: erinomainen taso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;"><strong>A. Tarve, määrittely ja rajaus</strong> — <code>01-projektikuvaus.md</code> ja toteutus</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Käyttäjä, ongelma ja hyöty ovat ymmärrettäviä. Keskeiset vaatimukset ovat testattavia ja rajaus toteutuskelpoinen.</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Käyttäjäskenaariot, prioriteetit ja hyväksymiskriteerit muodostavat johdonmukaisen kokonaisuuden. Merkittävät valinnat ja muutokset on perusteltu.</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Vaihtoehtoja ja olennaisia oletuksia on arvioitu perustellusti. Rajaus, riskit ja kriteerit tukevat vakuuttavasti käyttäjän tavoitetta.</td>
+</tr>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;"><strong>B. AI:n tavoitteellinen ohjaus ja tarkistaminen</strong> — <code>02-ai-tyoskentely.md</code>, <code>AGENTS.md</code> tai vastaava prosessi sekä konkreettinen esimerkki</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Alkuprompt liittyy määrittelyyn. Työkalut ja jatkuva prosessi on kuvattu. Yksi todellinen esimerkki osoittaa ihmisen tekemän tarkistuksen ja ratkaisun perustelun.</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">AI-tehtävät on rajattu tarkoituksenmukaisesti ja tuotoksia katselmoidaan ja testataan. Esimerkki osoittaa, miten havainto vaikutti hyväksymiseen, korjaukseen tai hylkäämiseen.</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Prosessin toimivuutta ja rajoituksia on analysoitu. Työskentelyä on mukautettu perustellusti havaintojen mukaan, ja vaikutus ratkaisuun on näkyvä.</td>
+</tr>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;"><strong>C. Toteutuksen toimivuus ja rakenne</strong> — käynnistettävä palautusversio ja sen keskeinen käyttötapaus</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Keskeinen käyttötapaus toimii. Toteutus on ymmärrettävästi jäsennetty, ja vähintään yksi olennainen virhe- tai rajatapaus on hallittu. Rajoitukset on tunnistettu.</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Olennaiset vaatimukset toteutuvat johdonmukaisesti. Rakenne tukee ylläpitoa, ja keskeiset virhetilanteet käsitellään tarkoituksenmukaisesti.</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Toteutus on valitussa rajauksessa luotettava ja hyvin perusteltu. Rakenne ja virheiden käsittely osoittavat harkittuja ratkaisuja; tunnetut rajat on osoitettu näytöin.</td>
+</tr>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;"><strong>D. Testaus ja validointi</strong> — <code>03-testaus-ja-validointi.md</code>, testit ja tulokset</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Tärkeimmät vaatimukset on testattu ja tulokset kirjattu. Mukana on olennainen virhe- tai rajatapaus. Käyttäjätarpeen täyttymistä arvioidaan konkreettisen kokeilun perusteella.</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Vaatimusten ja testien yhteys sekä odotetut ja havaitut tulokset ovat toistettavia. Epäonnistumiset ja kattavuuden rajat käsitellään. Validointi perustelee saadun hyödyn ja puutteet.</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Testauksen kattavuuden valinnat ja jäännösriskit on analysoitu. Tekniset näytöt ja käyttäjätarpeen validointi tukevat perusteltuja johtopäätöksiä ja kehitystoimia.</td>
+</tr>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;"><strong>E. Git-yhteistyö ja toimitettavuus</strong> — README, sovittu dokumenttirakenne, historia, lähteet ja video</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Repo on käytetty työssä, molempien osuus on tunnistettavissa ja käynnistys onnistuu ohjeella. Markdown-dokumentit löytyvät sovitusti ja vastaavat pääosin toteutusta. Video näyttää palautusversion keskeisen käytön.</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Muutokset ja työnjako ovat ymmärrettäviä, katselmoinnista on näyttö ja toimitus on toistettava. Dokumentit, versio, video ja tarvittavat aineistot muodostavat yhtenäisen kokonaisuuden.</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Repo mahdollistaa vaivattoman perehtymisen, kokeilun ja jatkokehityksen. Versiohistoria ja katselmointi osoittavat hallittua yhteistyötä; dokumentaatio on tiivistä, täsmällistä ja luotettavaa.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>3 pistettä:</strong> osa-alueesta on tunnistettava yritys ja osittaista näyttöä, mutta 6 pisteen perustasosta puuttuu olennainen osa. Esimerkiksi vaatimukset ovat enimmäkseen tulkinnanvaraisia, AI:n tarkistus jää väitteeksi tai testituloksia ei pystytä toistamaan. Opettaja nimeää puuttuvan näytön.</p>
+<p><strong>0 pistettä:</strong> arvioitavaa näyttöä ei ole tai se ei osoita osa-alueen tavoitetta. Pääsyongelma selvitetään ennen kuin sitä tulkitaan osaamisen puuttumiseksi.</p>
+<p>Yhteisen projektin hyväksymisraja: <strong>vähintään 30/60 pistettä ja jokaisessa osa-alueessa vähintään 6 pistettä</strong>. Ehto tekee näkyväksi koko tuotantoketjun vähimmäistason. Puuttuvaa toimivaa ydinkäyttötapausta tai olennaista osaamisnäyttöä ei voi korvata muiden osa-alueiden korkeilla pisteillä.</p>
+<h3 id="2-toimintasuunnitelman-taydennys-012-pistetta">2. Toimintasuunnitelman täydennys, 0–12 pistettä</h3>
+<p>Hyvä alkuperäinen työ voi saada 60/60 pistettä ilman täydennyssuunnitelmaa. Toimintasuunnitelma on vapaaehtoinen mahdollisuus osoittaa palautteen analysointia ja jatkokehityksen suunnittelua. Se ei edellytä muutosten toteuttamista.</p>
+<p>Hyväksytty toimintasuunnitelman arviointi: kolme kriteeriä, kustakin 0–4 p, yhteensä enintään 12 p:</p>
+<table style="border-collapse:collapse;width:100%;margin:1em 0;">
+<thead>
+<tr>
+<th scope="col" style="border:1px solid #aebdca;padding:.6em;text-align:left;background:#edf3f8;">Kriteeri</th>
+<th scope="col" style="border:1px solid #aebdca;padding:.6em;text-align:left;background:#edf3f8;">0 p</th>
+<th scope="col" style="border:1px solid #aebdca;padding:.6em;text-align:left;background:#edf3f8;">2 p: perustaso</th>
+<th scope="col" style="border:1px solid #aebdca;padding:.6em;text-align:left;background:#edf3f8;">4 p: erinomainen taso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;"><strong>Palautteen analyysi ja priorisointi</strong></td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Palautetta ei käsitellä tai sitä vain kopioidaan.</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Olennainen havainto tunnistetaan ja kehityskohde valitaan perustellen.</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Havaintojen merkitys suhteessa tavoitteisiin analysoidaan ja kehityskohteet priorisoidaan perustellusti. Myös hylättävä palaute perustellaan tarvittaessa.</td>
+</tr>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;"><strong>Toimenpiteiden toteutuskelpoisuus</strong></td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Toimenpide puuttuu tai jää yleiseksi toiveeksi.</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Muutos on konkreettinen ja rajattu.</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Toimenpiteet, etenemisjärjestys, vastuut ja realistinen työmäärä muodostavat toteuttamiskelpoisen suunnitelman.</td>
+</tr>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;"><strong>Onnistumisen tarkistaminen</strong></td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Tarkistustapaa ei kuvata.</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Muutoksen onnistumiselle on ymmärrettävä kriteeri.</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Kriteeri, testitapa tai muu näyttö ja tavoiteltu käyttäjähyöty liittyvät selkeästi tunnistettuun puutteeseen.</td>
+</tr>
+</tbody>
+</table>
+<p>Yksi piste tarkoittaa osittaista perustason näyttöä. Kolme pistettä tarkoittaa perustason ylittävää, mutta erinomaisesta tasosta vielä puutteellista näyttöä. Arvioidaan suunnitelman laatua, ei saadun palautteen määrää tai myönteisyyttä.</p>
+<p>Laskutapa: <strong>parin lopulliset projektipisteet = min(60, alkuperäiset projektipisteet + toimintasuunnitelman pisteet)</strong>. Esimerkiksi 42 + 12 = 54 p ja 57 + 12 = 60 p. Suunnitelma ei alenna alkuperäisiä pisteitä. Sama parin yhteinen pistemäärä tulee kummallekin, kun molemmat osallistuvat suunnitelmaan; osallistuminen kirjataan suunnitelmaan. Jos vain toinen laatii suunnitelman, täydennys arvioidaan hänen hyväkseen ja kirjataan Moodlessa henkilökohtaisesti yhteisen projektiosuuden täydennyksenä.</p>
+<p>Suunnitelma on erillinen suunnittelunäyttö: se <strong>ei muuta alkuperäisen toteutuksen tai testauksen osa-aluetasoja eikä poista niiden vähimmäisrajoja</strong>. Jos jokin osa-alue jää alle 6 pisteen, tarvitaan sen puuttuvan näytön täydentäminen erikseen. Toimintasuunnitelma ei korvaa oman työn ja oppimisen vähimmäisnäyttöjä, puuttuvia pakollisia palautuksia tai tentin hyväksyntää. Myöhästyneen tai hylätyn suorituksen täydentäminen on eri menettely, jonka aikataulu vahvistetaan erikseen.</p>
+<h3 id="3-oma-tyo-ja-oppiminen-projektissa-015-pistetta">3. Oma työ ja oppiminen projektissa, 0–15 pistettä</h3>
+<p>Kumpikin opiskelija saa omat pisteensä. Näyttönä käytetään dokumentoitua omaa osuutta, Git-historiaa ja katselmointeja, projektivideon omaa osuutta sekä Moodlen henkilökohtaista reflektiota. Erillisiä henkilökohtaisia demoja tai näyttökeskusteluja ei järjestetä. Pelkkä parin valmis tuotos tai commitien määrä ei osoita yksilön osaamista.</p>
+<table style="border-collapse:collapse;width:100%;margin:1em 0;">
+<thead>
+<tr>
+<th scope="col" style="border:1px solid #aebdca;padding:.6em;text-align:left;background:#edf3f8;">Osa-alue</th>
+<th scope="col" style="border:1px solid #aebdca;padding:.6em;text-align:left;background:#edf3f8;">3 p: perustaso</th>
+<th scope="col" style="border:1px solid #aebdca;padding:.6em;text-align:left;background:#edf3f8;">4 p: hyvä taso</th>
+<th scope="col" style="border:1px solid #aebdca;padding:.6em;text-align:left;background:#edf3f8;">5 p: erinomainen taso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;"><strong>Oma työ ja ratkaisujen ymmärtäminen</strong></td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Osoittaa oman konkreettisen työnsä ja selittää ratkaisun sekä sen tarkistamisen.</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Perustelee omat valintansa suhteessa vaatimuksiin ja tunnistaa ratkaisun rajoitukset.</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Vertaa perustellusti vaihtoehtoja ja analysoi ratkaisunsa vaikutusta kokonaisuuteen.</td>
+</tr>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;"><strong>Yhteistyö ja henkilökohtainen vastuu</strong></td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Osallistuu projektiin ja toisen työn tarkistamiseen; oma osuus ja työnjako ovat tunnistettavia.</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Tukee parin etenemistä ja osoittaa, miten oma katselmointi, testaus tai ongelmanratkaisu paransi yhteistä työtä.</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Arvioi ja kehittää työnjakoa sekä yhteisiä käytäntöjä perustellusti konkreettisten havaintojen avulla.</td>
+</tr>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;"><strong>Reflektio ja opitun arviointi</strong></td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Kuvaa omin havainnoin onnistumisen, vaikeuden, AI:n roolin ja opitun.</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Yhdistää havainnot konkreettisiin tilanteisiin ja perustelee, mitä tekisi seuraavaksi toisin.</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Analysoi osaamisensa kehittymistä, tarkistusvastuuta ja toimintatapojen vaikutuksia sekä johtaa niistä toteuttamiskelpoisia muutoksia.</td>
+</tr>
+</tbody>
+</table>
+<p>Kussakin osa-alueessa <strong>0 p</strong> tarkoittaa puuttuvaa näyttöä, <strong>1 p</strong> hyvin niukkaa tai yleistä kuvausta ja <strong>2 p</strong> osittaista näyttöä, josta puuttuu perustason olennainen osa. Arviointi perustuu palautettuun aineistoon. Epäselvä tai puuttuva näyttö täydennetään tarvittavalla dokumentilla, videon oman osuuden tarkennuksella tai reflektiolla opettajan palautusohjeen mukaan; erillistä näyttökeskustelua ei edellytetä.</p>
+<p>Oman työn ja oppimisen hyväksymisraja: <strong>jokaisesta osa-alueesta vähintään 3 pistettä</strong>, yhteensä vähintään 9/15 p. Vahva reflektio ei yksin korvaa puuttuvaa omaa työtä tai sen ymmärtämistä.</p>
+<h3 id="4-muut-suoritukset-ja-tasapuolisuus">4. Muut suoritukset ja tasapuolisuus</h3>
+<ul>
+<li>Kolmen videon henkilökohtainen vertaisarviointi ja oma reflektio kuuluvat projektin suoritukseen. Vertaisarviointien tekeminen tarkistetaan; niistä ei anneta erillisiä pisteitä. Reflektion laatu kuuluu henkilökohtaiseen arviointiin, ei parin yhteisiin pisteisiin.</li>
+<li>Videon tehtävä on näyttää toiminta ja tekijöiden osuus. Äänen, kuvan tai esiintymisen tuotannollista laatua ei arvioida, kun sisältö on ymmärrettävä. Tarvittava vaihtoehtoinen esitystapa sovitaan opettajan kanssa samojen osaamistavoitteiden perusteella.</li>
+<li>Manuaalinen ja automatisoitu testaus voivat osoittaa saman tavoitteen. Ulkopuolista asiakasta, oikeaa teollisuusdataa tai pilvipalvelun käyttöä ei vaadita korkeisiinkaan projektipisteisiin.</li>
+<li>Maksullinen tai agenttinen AI-ympäristö ei ole etu pisteytyksessä. Arvioidaan ohjauksen, tarkistamisen ja perustelujen laatua.</li>
+<li>Moodle-esitehtävät ovat erillistä palautetta antavaa harjoittelua. Ensimmäiselle kerralle ei ole esitehtävää. Ne ovat pakollisia mutta arvioimattomia: niiden tekemistä seurataan, mutta niistä ei anneta pisteitä tai arvosanaa. Täydentämistapa ilmoitetaan tehtävän yhteydessä.</li>
+<li>Puuttuvat pakolliset palautukset ja käyttöoikeusongelmat ilmoitetaan yksilöitynä. Korjausaika sekä myöhästymis- ja uusintakäytäntö julkaistaan ennen tehtävän avaamista. Näistä ei oleteta automaattisia pistevähennyksiä tässä ohjeessa.</li>
+</ul>
+<h3 id="vertaisarvioinnin-rooli">Vertaisarvioinnin rooli</h3>
+<p>Vertaisarvioijat antavat havaintoihin perustuvaa palautetta videosta; heidän antamiaan arvioita ei keskiarvoisteta projektin arvosanaksi. Projektin peruspisteet antaa opettaja hyväksytyn arviointitaulukon ja alkuperäisen palautusversion näytön perusteella. Vertaispalautteen väite ei yksin osoita vaatimuksen täyttymistä tai puuttumista.</p>
+<p>Jokaisen tekemä vertaisarviointi on projektiohjeen mukainen henkilökohtainen suoritus. Nykyisessä mallissa sen tekeminen tarkistetaan ilman erillisiä arviointipisteitä. Jokainen arvioi kolme muuta projektivideota; määrä on hyväksytty.</p>
+<p>Saadun palautteen vaikutus pisteisiin kulkee toimintasuunnitelman kautta: opettaja arvioi palautteen käsittelyn ja jatkokehityksen suunnittelun, enintään 12 pistettä projektin 60 pisteen rajan sisällä. Myös kriittisen palautteen perusteltu hylkääminen voi osoittaa osaamista. Puuttuvan palautteen tilalla tarjotaan vastaava katselmointi, jotta täydennysmahdollisuus ei riipu toisten palautuksista.</p>
+<h2 id="arvosanan-laskenta">Arvosanan laskenta</h2>
+<h3 id="sovittu-arviointimalli">Sovittu arviointimalli</h3>
+<p>Jokainen kolmesta arvioitavasta osasuorituksesta saa oman arvosanan asteikolla 0–5. Kurssin arvosanan lähtökohtana on niiden painotettu keskiarvo.</p>
+<table style="border-collapse:collapse;width:100%;margin:1em 0;">
+<thead>
+<tr>
+<th scope="col" style="border:1px solid #aebdca;padding:.6em;text-align:left;background:#edf3f8;">Osasuoritus</th>
+<th scope="col" style="border:1px solid #aebdca;padding:.6em;text-align:left;background:#edf3f8;">Paino</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Parin yhteinen projekti</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">60 %</td>
+</tr>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Oma työ ja oppiminen projektissa</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">15 %</td>
+</tr>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">Tentti</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">25 %</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Painotettu keskiarvo = 0,60 × projektin arvosana + 0,15 × oman työn ja oppimisen arvosana + 0,25 × tentin arvosana.</strong></p>
+<p>Esitehtävät ovat pakollisia, mutta niistä ei anneta pisteitä tai arvosanaa. Ne eivät ole neljäs painotettava osasuoritus. Ensimmäiselle opetuskerralle ei ole esitehtävää. Tekemistä seurataan Moodlessa; puuttuvan tehtävän täydentämistapa ilmoitetaan tehtävän yhteydessä. Oikeiden vastausten määrälle ei tässä aseteta erillistä läpäisyrajaa.</p>
+<p>Projektin ja oman työn pisteet ovat arviointitaulukon apuväline. Niitä ei lasketa suoraan yhteen tenttipisteiden kanssa kurssin kokonaispisteiksi. Ensin pisteet muunnetaan kunkin osasuorituksen arvosanaksi ja vasta sitten käytetään painoja.</p>
+<h3 id="pisterajat">Pisterajat</h3>
+<p>Alla olevat pisterajat sekä pyöristys- ja hyväksymiskäytäntö on hyväksytty.</p>
+<table style="border-collapse:collapse;width:100%;margin:1em 0;">
+<thead>
+<tr>
+<th scope="col" style="border:1px solid #aebdca;padding:.6em;text-align:left;background:#edf3f8;">Arvosana</th>
+<th scope="col" style="border:1px solid #aebdca;padding:.6em;text-align:left;background:#edf3f8;">Projekti, enintään 60 p</th>
+<th scope="col" style="border:1px solid #aebdca;padding:.6em;text-align:left;background:#edf3f8;">Oma työ ja oppiminen, enintään 15 p</th>
+<th scope="col" style="border:1px solid #aebdca;padding:.6em;text-align:left;background:#edf3f8;">Tentti, osuus sen enimmäispisteistä</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">0</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">alle 30 p tai osa-alueen vähimmäisnäyttö puuttuu</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">alle 9 p tai osa-alueen vähimmäisnäyttö puuttuu</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">alle 50 %</td>
+</tr>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">1</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">vähintään 30, alle 36 p</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">9–10 p</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">vähintään 50 %, alle 60 %</td>
+</tr>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">2</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">vähintään 36, alle 42 p</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">11 p</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">vähintään 60 %, alle 70 %</td>
+</tr>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">3</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">vähintään 42, alle 48 p</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">12 p</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">vähintään 70 %, alle 80 %</td>
+</tr>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">4</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">vähintään 48, alle 54 p</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">13 p</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">vähintään 80 %, alle 90 %</td>
+</tr>
+<tr>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">5</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">54–60 p</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">14–15 p</td>
+<td style="border:1px solid #aebdca;padding:.6em;vertical-align:top;">90–100 %</td>
+</tr>
+</tbody>
+</table>
+<p>Projektin viidessä osa-alueessa vaaditaan vähintään 6/12 p kussakin. Oman työn kolmessa osa-alueessa vaaditaan vähintään 3/5 p kussakin. Näin vahva näyttö yhdestä asiasta ei peitä kokonaan puuttuvaa osaamista toisessa. Tarkemmat näytöt on kuvattu <a href="#projektin-arviointikriteerit">projektin arviointikriteereissä</a>.</p>
+<p>Tentin prosenttiosuutta ei pyöristetä ennen arvosanan määritystä. Esimerkiksi 25 pisteen tentissä alimmat hyväksyttävät kokonaispisteet olisivat 13, 15, 18, 20 ja 23 arvosanoille 1–5. Tentin todellinen enimmäispistemäärä määritellään sen tehtävien perusteella, ei tentin 25 prosentin painon perusteella.</p>
+<h3 id="loppuarvosanan-maaritys">Loppuarvosanan määritys</h3>
+<ul>
+<li>Jokaisen arvioitavan osasuorituksen pitää olla hyväksytty eli vähintään arvosana 1. Hylättyä osasuoritusta ei korvata toisten arvosanoilla.</li>
+<li>Pakolliset esitehtävät ja muut pakolliset palautukset pitää tehdä. Puuttuva suoritus täydennetään annettavan ohjeen mukaan, eikä sille keksitä laskennallista arvosanaa.</li>
+<li>Laske painotettu keskiarvo täydellä tarkkuudella ja pyöristä vasta lopuksi lähimpään kokonaislukuun. Täsmälleen puolikas pyöristetään ylöspäin: esimerkiksi 2,50 → 3.</li>
+<li>Kaikki hyväksytyt osasuoritukset antavat keskiarvon väliltä 1–5. Loppuarvosana on enintään 5.</li>
+</ul>
+<p>Esimerkki: projektin arvosana 4, oman työn arvosana 3 ja tentin arvosana 2 tuottavat keskiarvon 0,60 × 4 + 0,15 × 3 + 0,25 × 2 = <strong>3,35</strong>, josta loppuarvosana on <strong>3</strong>. Projektin 48 raakaa pistettä ei tällöin lisätä tentin raakapisteisiin.</p>
+<h3 id="toimintasuunnitelman-vaikutus">Toimintasuunnitelman vaikutus</h3>
+<p>Oman projektin toimintasuunnitelmalla voi sovitusti täydentää projektipisteitä. Hyväksytty enimmäistäydennys on 12 pistettä projektin 60 pisteen rajan sisällä. Täydennys tehdään ennen projektipisteiden muuntamista arvosanaksi. Se ei muuta alkuperäisten osa-alueiden vähimmäisnäyttöjä. Esimerkiksi 42 p + 12 p = 54 p nostaa projektin arvosanan 3:sta 5:een ja painotettua keskiarvoa 1,20:llä. Täydennys ei siis ole 12 prosenttia kurssiarvosanasta. Toimintasuunnitelman arviointi kolmella 0–4 pisteen kriteerillä on hyväksytty. Täydennys ei poista osasuoritusten vähimmäisvaatimuksia.</p>
+</div>
+</main></body></html>
