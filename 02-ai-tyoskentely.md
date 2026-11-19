@@ -30,8 +30,7 @@ Ehdotusta rajattiin siis projektin tavoitteiden ja käytettävissä olevan ajan 
 
 ## Työnjako ja kummankin konkreettinen osuus
 
-[Kirjoita tähän tekijöiden nimet ja GitHub-käyttäjätunnukset sekä kummankin omat tehtävät.]
+Teen itste
 
 Työn etenemistä seurataan GitHub-repositorion muutosten ja commit-merkintöjen avulla. Näistä voidaan tarkistaa, mitä kumpikin tekijä on tehnyt projektiin.
 
-rvita.
