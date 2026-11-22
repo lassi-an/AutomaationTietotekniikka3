@@ -2,48 +2,67 @@
 
 ## Testien suoritusohje
 
-Ohjelmisto testataan suorittamalla se paikallisesti ja kokeilemalla sen toimintoja. Automaattiset testit suoritetaan Pytestillä.
+Ohjelman toimintaa testataan suorittamalla se paikallisesti ja kokeilemalla käyttöliittymän eri toimintoja. Testauksessa tarkistetaan, että sovellus hakee säätiedot oikein, näyttää ne käyttäjälle ja toimii eri paikkakuntia valittaessa.
 
-Testien suorittaminen:
-
-```bash
-python -m pytest
-```
-
-Ohjelman käynnistäminen:
+Ohjelman käynnistäminen paikallisesti:
 
 ```bash
-streamlit run app.py
+python -m streamlit run app.py
 ```
 
-Käyttöliittymässä kokeillaan paikkakunnan valintaa, säätietojen näyttämistä ja sääolosuhteiden arviota.
+Ohjelma avautuu verkkoselaimeen, jossa sen toimintoja voidaan kokeilla. Lisäksi sovelluksen toiminta tarkistetaan julkaistusta verkkoversiosta.
 
-## Vaatimuksiin sidotut tulokset
+Testauksessa kokeillaan ainakin:
+- Paikkakunnan vaihtamista.
+- Säätietojen hakemista ja näyttämistä.
+- Sääolosuhteiden sopivuusarviota.
+- Frisbeegolfratojen näyttämistä.
+- Ratojen hintatietoja.
+- Ruuhkaisuusarvioita.
+- Sovelluksen toimintaa virhetilanteissa.
 
-| **Vaatimus** | **Testitapa tai syöte** | **Odotettu tulos** | **Havaittu tulos** | **Johtopäätös** |
-| ------------ | ----------------------- | ------------------ | ------------------ | --------------- |
-| V1: Sään hakeminen | Valitaan paikkakunta käyttöliittymästä. | Ohjelma hakee valitun paikkakunnan säätiedot. | Ei vielä testattu. | Täydennetään testauksen jälkeen. |
-| V2: Säätietojen näyttäminen | Tarkistetaan lämpötila, tuulen nopeus ja sateen määrä. | Kaikki kolme säätietoa näkyvät käyttöliittymässä. | Ei vielä testattu. | Täydennetään testauksen jälkeen. |
-| V3: Olosuhteiden arviointi | Tarkistetaan erilaisilla säätiedoilla muodostuva arvio. | Ohjelma näyttää arvion: hyvä, kohtalainen tai huono. | Ei vielä testattu. | Täydennetään testauksen jälkeen. |
-| V4: Arvion perustelu | Tarkistetaan arvion yhteydessä näkyvä selitys. | Ohjelma kertoo, miksi olosuhteet ovat hyvät tai huonot. | Ei vielä testattu. | Täydennetään testauksen jälkeen. |
-| V5: Virhetilanteen käsittely | Kokeillaan tilannetta, jossa säätietojen hakeminen epäonnistuu. | Käyttäjälle näytetään ymmärrettävä virheilmoitus. | Ei vielä testattu. | Täydennetään testauksen jälkeen. |
+## Vaatimuksiin sidotut testit
+
+| Vaatimus | Testitapa tai syöte | Odotettu tulos | Havaittu tulos | Johtopäätös |
+|---|---|---|---|---|
+| V1: Säätietojen hakeminen | Valitaan paikkakunta käyttöliittymästä. | Sovellus hakee valitun paikkakunnan ajankohtaiset säätiedot. | Täydennetään testauksen jälkeen. | Täydennetään testauksen jälkeen. |
+| V2: Paikkakunnan valinta | Vaihdetaan paikkakuntaa Helsinki, Tampere, Turku ja Espoo. | Säätiedot ja radat vaihtuvat valitun paikkakunnan mukaan. | Täydennetään testauksen jälkeen. | Täydennetään testauksen jälkeen. |
+| V3: Säätietojen näyttäminen | Tarkistetaan lämpötila, tuuli, sade ja pilvisyys. | Säätiedot näkyvät selkeästi käyttöliittymässä. | Täydennetään testauksen jälkeen. | Täydennetään testauksen jälkeen. |
+| V4: Sään sopivuuden arviointi | Tarkastellaan sovelluksen muodostamaa sääarviota. | Sovellus antaa arvion sääolosuhteiden sopivuudesta frisbeegolfiin. | Täydennetään testauksen jälkeen. | Täydennetään testauksen jälkeen. |
+| V5: Sääarvion perusteleminen | Tarkistetaan sääarvion yhteydessä näkyvät tiedot. | Käyttäjä näkee, mitkä säätekijät vaikuttavat arvioon. | Täydennetään testauksen jälkeen. | Täydennetään testauksen jälkeen. |
+| V6: Frisbeegolfratojen näyttäminen | Valitaan eri paikkakuntia ja tarkastellaan ratoja. | Valitun paikkakunnan frisbeegolfradat näkyvät sovelluksessa. | Täydennetään testauksen jälkeen. | Täydennetään testauksen jälkeen. |
+| V7: Ratojen hinnat ja ruuhkaisuus | Tarkistetaan ratojen hinta- ja ruuhkaisuustiedot. | Ratojen tiedot ja ruuhkaisuusarviot näkyvät selkeästi. | Täydennetään testauksen jälkeen. | Täydennetään testauksen jälkeen. |
+| V8: Virhetilanteiden käsittely | Kokeillaan tilannetta, jossa säätietojen hakeminen epäonnistuu. | Käyttäjälle näytetään ymmärrettävä virheilmoitus. | Täydennetään testauksen jälkeen. | Täydennetään testauksen jälkeen. |
+| V9: Verkkosovelluksen toiminta | Avataan julkaistu Streamlit-linkki selaimessa. | Sovellus avautuu ja sen keskeiset toiminnot ovat käytettävissä. | Täydennetään testauksen jälkeen. | Täydennetään testauksen jälkeen. |
 
 ## Olennainen virhe- tai rajatapaus
 
-Yhtenä tärkeänä virhetilanteena testataan säätietojen hakemisen epäonnistumista. Tämä voi tapahtua esimerkiksi silloin, kun internetyhteys ei toimi tai sääpalvelu ei ole käytettävissä.
+Yhtenä tärkeänä testattavana virhetilanteena on säätietojen hakemisen epäonnistuminen. Tämä voi johtua esimerkiksi internetyhteyden katkeamisesta tai säärajapinnan tilapäisestä häiriöstä.
 
-Odotettu tulos on, että ohjelma näyttää käyttäjälle ymmärrettävän virheilmoituksen eikä kaadu.
+Odotettu tulos on, että sovellus näyttää käyttäjälle ymmärrettävän virheilmoituksen eikä kaadu hallitsemattomasti.
+
+Lisäksi testataan sovelluksen toimintaa eri paikkakunnilla sekä tarkistetaan, että käyttöliittymä näyttää tiedot oikein myös silloin, kun paikkakuntaa vaihdetaan.
 
 ## Validointi käyttäjätarpeeseen nähden
 
-Ohjelmiston tarkoituksena on auttaa frisbeegolfin harrastajaa arvioimaan, millaiset sääolosuhteet ovat pelaamiseen sopivat.
+Sovelluksen tarkoituksena on helpottaa frisbeegolfin harrastajan päätöstä siitä, kannattaako pelikierrokselle lähteä ja mille radalle.
 
-Validoinnissa kokeillaan, pystyykö käyttäjä valitsemaan paikkakunnan, tarkistamaan säätiedot ja saamaan niiden perusteella ymmärrettävän arvion pelaamiseen sopivista olosuhteista.
+Validoinnissa tarkistetaan, pystyykö käyttäjä valitsemaan paikkakunnan, tarkistamaan ajankohtaiset säätiedot, saamaan sääarvion ja tutustumaan paikkakunnan frisbeegolfratoihin.
 
-Kokeilijana toimii projektin tekijä tai mahdollinen toinen opiskelija. Kokeilun jälkeen kirjataan, saavutettiinko käyttäjän tavoite ja oliko ohjelmasta hyötyä.
+Sovellusta kokeillaan käytännössä projektin tekijän toimesta. Mahdollinen toinen käyttäjä voi myös kokeilla sovellusta ja antaa palautetta sen käytettävyydestä.
 
-Kokeilun rajoituksena on, että sääennusteet eivät aina vastaa todellista säätä. Ohjelman antama arvio on suuntaa antava.
+Kokeilun perusteella arvioidaan, helpottaako sovellus pelikierroksen suunnittelua ja löytyvätkö tärkeimmät tiedot helposti. Testauksen tulokset kirjataan tähän dokumenttiin.
 
 ## Epäonnistumiset ja tunnetut puutteet
 
-Ei ole vielä päivitän jos muistan
+Testauksen aikana havaitut virheet ja puutteet kirjataan tähän osioon. Jos jokin toiminto ei toimi odotetusti, kuvataan ongelma, sen mahdollinen syy ja tehdyt korjaukset.
+
+Sovelluksen tunnettuja rajoituksia ovat:
+
+- Säätiedot perustuvat Open-Meteo-palvelun tarjoamiin tietoihin, joten ne eivät välttämättä vastaa täysin todellisia olosuhteita.
+- Sääarvio on suuntaa antava eikä huomioi kaikkien pelaajien henkilökohtaisia mieltymyksiä.
+- Ratojen ruuhkaisuusarviot eivät perustu reaaliaikaiseen pelaajamäärään, vaan vuodenaikaan, viikonpäivään, kellonaikaan ja valoisan ajan pituuteen.
+- Ratojen tiedot ovat sovellukseen määriteltyjä tietoja eivätkä päivity automaattisesti.
+- Verkkosovellus voi käyttämättömyyden jälkeen käynnistyä uudelleen, jolloin ensimmäinen lataus voi kestää tavallista kauemmin.
+
+Testauksen lopuksi kirjataan, mitkä toiminnot onnistuvat, mahdolliset korjatut ongelmat sekä sellaiset puutteet, joita ei projektin aikataulun tai rajauksen vuoksi korjata.
