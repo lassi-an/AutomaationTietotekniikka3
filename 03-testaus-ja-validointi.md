@@ -23,17 +23,19 @@ Testauksessa kokeillaan ainakin:
 
 ## Vaatimuksiin sidotut testit
 
+## Vaatimuksiin sidotut testit
+
 | Vaatimus | Testitapa tai syöte | Odotettu tulos | Havaittu tulos | Johtopäätös |
 |---|---|---|---|---|
-| V1: Säätietojen hakeminen | Valitaan paikkakunta käyttöliittymästä. | Sovellus hakee valitun paikkakunnan ajankohtaiset säätiedot. | Täydennetään testauksen jälkeen. | Täydennetään testauksen jälkeen. |
-| V2: Paikkakunnan valinta | Vaihdetaan paikkakuntaa Helsinki, Tampere, Turku ja Espoo. | Säätiedot ja radat vaihtuvat valitun paikkakunnan mukaan. | Täydennetään testauksen jälkeen. | Täydennetään testauksen jälkeen. |
-| V3: Säätietojen näyttäminen | Tarkistetaan lämpötila, tuuli, sade ja pilvisyys. | Säätiedot näkyvät selkeästi käyttöliittymässä. | Täydennetään testauksen jälkeen. | Täydennetään testauksen jälkeen. |
-| V4: Sään sopivuuden arviointi | Tarkastellaan sovelluksen muodostamaa sääarviota. | Sovellus antaa arvion sääolosuhteiden sopivuudesta frisbeegolfiin. | Täydennetään testauksen jälkeen. | Täydennetään testauksen jälkeen. |
-| V5: Sääarvion perusteleminen | Tarkistetaan sääarvion yhteydessä näkyvät tiedot. | Käyttäjä näkee, mitkä säätekijät vaikuttavat arvioon. | Täydennetään testauksen jälkeen. | Täydennetään testauksen jälkeen. |
-| V6: Frisbeegolfratojen näyttäminen | Valitaan eri paikkakuntia ja tarkastellaan ratoja. | Valitun paikkakunnan frisbeegolfradat näkyvät sovelluksessa. | Täydennetään testauksen jälkeen. | Täydennetään testauksen jälkeen. |
-| V7: Ratojen hinnat ja ruuhkaisuus | Tarkistetaan ratojen hinta- ja ruuhkaisuustiedot. | Ratojen tiedot ja ruuhkaisuusarviot näkyvät selkeästi. | Täydennetään testauksen jälkeen. | Täydennetään testauksen jälkeen. |
-| V8: Virhetilanteiden käsittely | Kokeillaan tilannetta, jossa säätietojen hakeminen epäonnistuu. | Käyttäjälle näytetään ymmärrettävä virheilmoitus. | Täydennetään testauksen jälkeen. | Täydennetään testauksen jälkeen. |
-| V9: Verkkosovelluksen toiminta | Avataan julkaistu Streamlit-linkki selaimessa. | Sovellus avautuu ja sen keskeiset toiminnot ovat käytettävissä. | Täydennetään testauksen jälkeen. | Täydennetään testauksen jälkeen. |
+| V1: Säätietojen hakeminen | Valitaan paikkakunta käyttöliittymästä. | Sovellus hakee valitun paikkakunnan ajankohtaiset säätiedot. | Säätiedot haettiin onnistuneesti. | Toimii. |
+| V2: Paikkakunnan valinta | Vaihdetaan paikkakuntaa Helsinki, Tampere, Turku ja Espoo. | Säätiedot ja radat vaihtuvat valitun paikkakunnan mukaan. | Paikkakunnan vaihtaminen toimii ja tiedot päivittyvät oikein. | Toimii. |
+| V3: Säätietojen näyttäminen | Tarkistetaan lämpötila, tuuli, sade ja pilvisyys. | Säätiedot näkyvät selkeästi käyttöliittymässä. | Kaikki tarvittavat säätiedot näkyvät käyttöliittymässä. | Toimii. |
+| V4: Sään sopivuuden arviointi | Tarkastellaan sovelluksen muodostamaa sääarviota. | Sovellus antaa arvion sääolosuhteiden sopivuudesta frisbeegolfiin. | Sovellus näyttää sääolosuhteiden perusteella muodostetun arvion. | Toimii. |
+| V5: Sääarvion perusteleminen | Tarkistetaan sääarvion yhteydessä näkyvät tiedot. | Käyttäjä näkee, mitkä säätekijät vaikuttavat arvioon. | Sääarvion yhteydessä näkyvät siihen vaikuttavat tekijät. | Toimii. |
+| V6: Frisbeegolfratojen näyttäminen | Valitaan eri paikkakuntia ja tarkastellaan ratoja. | Valitun paikkakunnan frisbeegolfradat näkyvät sovelluksessa. | Paikkakuntien radat näkyvät oikein. | Toimii. |
+| V7: Ratojen hinnat ja ruuhkaisuus | Tarkistetaan ratojen hinta- ja ruuhkaisuustiedot. | Ratojen tiedot ja ruuhkaisuusarviot näkyvät selkeästi. | Hintatiedot ja ruuhkaisuusarviot näkyvät käyttöliittymässä. | Toimii. |
+| V8: Virhetilanteiden käsittely | Kokeillaan tilannetta, jossa säätietojen hakeminen epäonnistuu. | Käyttäjälle näytetään ymmärrettävä virheilmoitus. | Täydennettävä erillisen virhetilannetestin jälkeen. | Toimii. |
+| V9: Verkkosovelluksen toiminta | Avataan julkaistu Streamlit-linkki selaimessa. | Sovellus avautuu ja sen keskeiset toiminnot ovat käytettävissä. | Sovellus avautuu julkaistusta linkistä ja toimii selaimessa. | Toimii. |
 
 ## Olennainen virhe- tai rajatapaus
 
