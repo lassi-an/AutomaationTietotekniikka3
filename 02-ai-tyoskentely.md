@@ -17,8 +17,8 @@ Työ pilkotaan pieniin osiin, jotta jokainen vaihe voidaan ymmärtää ja tarkis
 | ChatGPT | GPT-6 | Projektin ideointi, suunnittelu, Python-koodin kirjoittamisen tukeminen, käyttöliittymän kehittäminen ja virheiden selvittäminen | Ehdotukset tarkistetaan itse, koodia muokataan tarvittaessa ja ohjelman toiminta testataan käytännössä |
 | GitHub | Git-versionhallinta | Projektitiedostojen tallentaminen, muutosten hallinta ja projektin jakaminen | Tarkistetaan, että tiedostot ovat repositoriossa ja muutokset tallentuvat oikein |
 | Python | 3.13 | Ohjelmiston toteuttaminen ja suorittaminen | Ohjelma käynnistetään ja sen toimintaa testataan käytännössä |
-| Streamlit | Versio tarkistetaan tarvittaessa | Käyttöliittymän toteuttaminen ja sovelluksen julkaiseminen verkossa | Tarkistetaan käyttöliittymän toiminta selaimessa sekä julkaistun sovelluksen toimivuus |
-| Visual Studio Code | Versio tarkistetaan tarvittaessa | Python-koodin kirjoittaminen, tiedostojen hallinta ja projektin kehittäminen | Tarkistetaan koodin toiminta suorittamalla sovellus |
+| Streamlit | Ei tiedossa | Käyttöliittymän toteuttaminen ja sovelluksen julkaiseminen verkossa | Tarkistetaan käyttöliittymän toiminta selaimessa sekä julkaistun sovelluksen toimivuus |
+| Visual Studio Code | Ei tiedossa | Python-koodin kirjoittaminen, tiedostojen hallinta ja projektin kehittäminen | Tarkistetaan koodin toiminta suorittamalla sovellus |
 | Open-Meteo API | API | Ajankohtaisten säätietojen hakeminen sovellukseen | Tarkistetaan, että sovellus hakee ja näyttää säätiedot oikein eri paikkakunnilla |
 
 
