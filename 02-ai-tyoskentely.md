@@ -28,7 +28,7 @@ Projektin suunnitteluvaiheessa ChatGPT ehdotti useita ominaisuuksia ja teknologi
 
 Projektin pitämiseksi riittävän yksinkertaisena päätettiin jättää kuvaajat ensimmäisestä versiosta pois. Näin voidaan keskittyä tärkeimpiin ominaisuuksiin: säätilan hakemiseen, lämpötilan, tuulen ja sateen näyttämiseen sekä frisbeegolfiin sopivien olosuhteiden arviointiin.
 
-Ehdotusta rajattiin siis projektin tavoitteiden ja käytettävissä olevan ajan perusteella.
+Ehdotusta rajattiin siis projektin tavoitteiden ja käytettävissä olevan ajan perusteella. Lisää ominaisuuksia olisi voinut tehdä, mutta työviikon aikana ei kerennyt enempää.
 
 ## Työnjako ja kummankin konkreettinen osuus
 
