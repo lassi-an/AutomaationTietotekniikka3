@@ -2,13 +2,15 @@
 
 ## Tekijät ja palautuspäivä
 
+Lassi Antikainen, 22.11.2026
+
 ## Videolinkki
 
 Lisää oppilaitoksen OneDriven katselulinkki 5–7 minuutin videoon. Varmista opettajan ja määrättyjen vertaisarvioijien pääsy.
 
 ## Arvioitavan kokonaisuuden löytäminen
 
-Kerro tarvittavat erityisohjeet ja tunnetut toimitusrajoitukset. Käynnistysohje on README:ssä.
+Sovelluksen linkki on README:ssä ja pitää huomioida, että sovelluksen avaaminen saattaa kestää hieman, jos se on ollut käyttämättä.
 
 ## Palautuksen tarkistus
 
