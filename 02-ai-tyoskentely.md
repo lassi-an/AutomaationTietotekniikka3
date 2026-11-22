@@ -12,13 +12,15 @@ Työ pilkotaan pieniin osiin, jotta jokainen vaihe voidaan ymmärtää ja tarkis
 
 ## Käytetyt työkalut
 
-| **Työkalu** | **Malli tai versio, jos tiedossa** | **Käyttötarkoitus** | **Tarkistustapa** |
+| **Työkalu** | **Malli tai versio** | **Käyttötarkoitus** | **Tarkistustapa** |
 |---|---|---|---|
-| ChatGPT | GPT-6 | Projektin ideointi, suunnittelu, ohjelmoinnin tukeminen ja virheiden selvittäminen | Ehdotukset tarkistetaan itse ja niiden toiminta testataan |
-| GitHub | Ei tiedossa | Projektitiedostojen tallentaminen ja versionhallinta | Tarkistetaan, että muutokset tallentuvat oikeisiin tiedostoihin |
-| Python | Versio täydennetään myöhemmin | Ohjelmiston toteuttaminen | Ohjelma suoritetaan ja sen toimintaa testataan |
-| Streamlit | Versio täydennetään myöhemmin | Käyttöliittymän toteuttaminen | Tarkistetaan käyttöliittymän toiminta selaimessa |
-| Pytest | Versio täydennetään myöhemmin | Ohjelmiston automaattinen testaaminen | Testien tulokset tarkistetaan |
+| ChatGPT | GPT-6 | Projektin ideointi, suunnittelu, Python-koodin kirjoittamisen tukeminen, käyttöliittymän kehittäminen ja virheiden selvittäminen | Ehdotukset tarkistetaan itse, koodia muokataan tarvittaessa ja ohjelman toiminta testataan käytännössä |
+| GitHub | Git-versionhallinta | Projektitiedostojen tallentaminen, muutosten hallinta ja projektin jakaminen | Tarkistetaan, että tiedostot ovat repositoriossa ja muutokset tallentuvat oikein |
+| Python | 3.13 | Ohjelmiston toteuttaminen ja suorittaminen | Ohjelma käynnistetään ja sen toimintaa testataan käytännössä |
+| Streamlit | Versio tarkistetaan tarvittaessa | Käyttöliittymän toteuttaminen ja sovelluksen julkaiseminen verkossa | Tarkistetaan käyttöliittymän toiminta selaimessa sekä julkaistun sovelluksen toimivuus |
+| Visual Studio Code | Versio tarkistetaan tarvittaessa | Python-koodin kirjoittaminen, tiedostojen hallinta ja projektin kehittäminen | Tarkistetaan koodin toiminta suorittamalla sovellus |
+| Open-Meteo API | API | Ajankohtaisten säätietojen hakeminen sovellukseen | Tarkistetaan, että sovellus hakee ja näyttää säätiedot oikein eri paikkakunnilla |
+
 
 ## Konkreettinen tarkistusesimerkki
 
@@ -30,7 +32,7 @@ Ehdotusta rajattiin siis projektin tavoitteiden ja käytettävissä olevan ajan 
 
 ## Työnjako ja kummankin konkreettinen osuus
 
-Teen itste
+Teen itse koko työn
 
 Työn etenemistä seurataan GitHub-repositorion muutosten ja commit-merkintöjen avulla. Näistä voidaan tarkistaa, mitä kumpikin tekijä on tehnyt projektiin.
 
