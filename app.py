@@ -27,33 +27,35 @@ st.set_page_config(
 
 
 # --------------------------------------------------
-# TUMMA ULKOASU
+# TUMMA VIHREÄ ULKOASU
 # --------------------------------------------------
 
 st.markdown("""
 <style>
 
-.stApp {
+/* Sovelluksen tausta */
+.stApp,
+[data-testid="stAppViewContainer"] {
     background-color: #101b16;
     color: #edf5ef;
 }
 
-[data-testid="stAppViewContainer"] {
+/* Yläpalkki */
+[data-testid="stHeader"] {
     background-color: #101b16;
 }
 
-[data-testid="stHeader"] {
-    background-color: transparent;
-}
-
+/* Otsikot */
 h1, h2, h3, h4 {
     color: #55cc83 !important;
 }
 
+/* Tavallinen teksti */
 p, li, label {
     color: #dce9df;
 }
 
+/* Tekstikentät */
 .stTextInput input {
     background-color: #1c2b23 !important;
     color: white !important;
@@ -65,12 +67,14 @@ p, li, label {
     color: #a4b7a9 !important;
 }
 
+/* Valintalistat */
 .stSelectbox div[data-baseweb="select"] > div {
     background-color: #1c2b23 !important;
     color: white !important;
     border-color: #42634d !important;
 }
 
+/* Painikkeet */
 .stButton button {
     background-color: #218653 !important;
     color: white !important;
@@ -84,6 +88,7 @@ p, li, label {
     color: white !important;
 }
 
+/* Sääkortit */
 .weather-card {
     background-color: #1c2b23;
     padding: 18px;
@@ -93,6 +98,7 @@ p, li, label {
     color: #edf5ef;
 }
 
+/* Mittarit */
 [data-testid="stMetric"] {
     background-color: #1c2b23;
     padding: 12px;
@@ -108,13 +114,25 @@ p, li, label {
     color: #c5d7ca !important;
 }
 
+/* Laatikot */
+[data-testid="stVerticalBlockBorderWrapper"] {
+    border-color: #365b42 !important;
+}
+
+/* Erottimet */
 hr {
     border-color: #365b42 !important;
 }
 
+/* Sovelluksen välit */
 .block-container {
     padding-top: 2rem;
     padding-bottom: 3rem;
+}
+
+/* Linkit */
+a {
+    color: #55cc83 !important;
 }
 
 </style>
@@ -255,7 +273,9 @@ if st.session_state.valittu_paikka:
             sade
         )
 
+        # --------------------------------------------------
         # NYKYINEN SÄÄ
+        # --------------------------------------------------
 
         st.subheader("Tämänhetkinen sää")
 
@@ -285,7 +305,9 @@ if st.session_state.valittu_paikka:
             f"**Säätila:** {kuvaile_saa(koodi)}"
         )
 
+        # --------------------------------------------------
         # PELAAMISSÄÄ
+        # --------------------------------------------------
 
         st.subheader("🥏 Arvio frisbeegolfiin")
 
@@ -359,34 +381,26 @@ if st.session_state.valittu_paikka:
 
                 with sarake:
 
-                    st.markdown(
-                        '<div class="weather-card">',
-                        unsafe_allow_html=True
-                    )
+                    with st.container(border=True):
 
-                    st.subheader(aika[11:16])
+                        st.subheader(aika[11:16])
 
-                    st.metric(
-                        "Lämpötila",
-                        f"{lampo} °C"
-                    )
+                        st.metric(
+                            "🌡️ Lämpötila",
+                            f"{lampo} °C"
+                        )
 
-                    st.write(
-                        f"💨 Tuuli: {tuuli_tunti} m/s"
-                    )
+                        st.write(
+                            f"💨 Tuuli: {tuuli_tunti} m/s"
+                        )
 
-                    st.write(
-                        f"🌧️ Sade: {sade_tunti} mm"
-                    )
+                        st.write(
+                            f"🌧️ Sade: {sade_tunti} mm"
+                        )
 
-                    st.write(
-                        kuvaile_saa(koodi_tunti)
-                    )
-
-                    st.markdown(
-                        "</div>",
-                        unsafe_allow_html=True
-                    )
+                        st.write(
+                            kuvaile_saa(koodi_tunti)
+                        )
 
         else:
 
