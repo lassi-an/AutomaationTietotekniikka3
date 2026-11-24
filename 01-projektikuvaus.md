@@ -2,104 +2,82 @@
 
 ## Käyttäjä, ongelma ja arvolupaus
 
-Projektin tarkoituksena on helpottaa frisbeegolfin harrastajan päätöstä siitä, kannattaako sääolosuhteiden puolesta lähteä pelaamaan. Frisbeegolfissa sää vaikuttaa paljon pelikokemukseen. Esimerkiksi voimakas tuuli voi vaikeuttaa kiekon hallintaa, sade tekee pelaamisesta epämukavampaa ja kylmä sää voi vähentää pelimukavuutta.
+Projektin tarkoituksena on helpottaa frisbeegolfin harrastajan pelikierroksen suunnittelua. Tuuli, sade ja lämpötila vaikuttavat merkittävästi pelaamiseen, mutta säätietojen ja sopivien ratojen etsiminen eri palveluista voi olla hankalaa.
 
-Säätietojen tarkistaminen eri palveluista ja niiden arvioiminen itse voi olla turhan vaivalloista. Tämän vuoksi toteutetaan Frisbeegolf-säävahti, joka kokoaa tärkeimmät säätiedot yhteen paikkaan ja antaa niiden perusteella arvion pelaamiseen sopivista olosuhteista.
-
-Sovelluksen avulla käyttäjä voi tarkistaa valitun paikkakunnan ajankohtaisen sään, arvioida sen sopivuutta frisbeegolfiin sekä tutustua paikkakunnan frisbeegolfratoihin ja niiden arvioituun ruuhkaisuuteen.
+Frisbeegolf-säävahti kokoaa säätiedot ja lähialueen frisbeegolfradat yhteen sovellukseen. Käyttäjä voi tarkistaa sääolosuhteet, saada arvion pelaamissäästä ja löytää sopivia ratoja.
 
 ## Käyttäjäskenaariot
 
-**Skenaario 1: Pelaaja suunnittelee pelikierrosta**
+**1. Pelikierroksen suunnittelu**
 
-Frisbeegolfin harrastaja suunnittelee lähtevänsä pelaamaan. Hän avaa Frisbeegolf-säävahdin, valitsee paikkakunnan ja tarkistaa ajankohtaiset säätiedot. Sovellus antaa arvion siitä, ovatko olosuhteet hyvät frisbeegolfiin.
+Käyttäjä valitsee paikkakunnan ja tarkistaa ajankohtaisen sään sekä sovelluksen antaman arvion pelaamisolosuhteista.
 
-**Skenaario 2: Pelaaja tarkistaa tuuliolosuhteet**
+**2. Tuuliolosuhteiden tarkistaminen**
 
-Pelaaja haluaa tietää, kuinka voimakas tuuli on ennen kierrokselle lähtemistä. Sovelluksesta hän näkee tuulen nopeuden ja saa sääarvion, jossa tuulen vaikutus pelaamiseen on huomioitu.
+Käyttäjä tarkistaa tuulen nopeuden metreinä sekunnissa ja näkee, miten tuuli vaikuttaa sääarvioon.
 
-**Skenaario 3: Pelaaja etsii sopivaa frisbeegolfrataa**
+**3. Frisbeegolfradan etsiminen**
 
-Pelaaja valitsee haluamansa paikkakunnan ja tarkastelee sovelluksessa listattuja frisbeegolfratoja. Hän näkee ratojen nimet, mahdolliset maksut sekä arvioidun ruuhkaisuuden. Näiden tietojen avulla hän voi valita itselleen sopivan radan.
+Käyttäjä tarkastelee lähialueen frisbeegolfratoja, niiden etäisyyksiä, väylämääriä ja maksutietoja. Hän voi myös avata radan kartalla tai siirtyä sen verkkosivulle.
 
 ## Vaatimukset ja hyväksymiskriteerit
 
 | Tunniste | Vaatimus | Hyväksymiskriteeri | Prioriteetti |
 |---|---|---|---|
-| V1 | Sovellus hakee ajankohtaiset säätiedot säärajapinnasta. | Sovellus näyttää valitun paikkakunnan lämpötilan, tuulen nopeuden ja sateen tiedot. | Korkea |
-| V2 | Käyttäjä voi valita paikkakunnan. | Käyttäjä voi valita sovelluksesta eri paikkakuntia ja saa niitä vastaavat säätiedot. | Korkea |
-| V3 | Sovellus arvioi sään sopivuutta frisbeegolfiin. | Sovellus antaa sääolosuhteiden perusteella arvion pelaamisen sopivuudesta. | Korkea |
-| V4 | Sovellus näyttää sääarvion perustelut. | Käyttäjä näkee säätekijät, jotka vaikuttavat pelaamisen sopivuuteen. | Korkea |
-| V5 | Sovellus näyttää paikkakunnan frisbeegolfratoja. | Käyttäjä näkee valitun paikkakunnan ratojen nimet ja mahdolliset maksutiedot. | Korkea |
-| V6 | Sovellus arvioi ratojen ruuhkaisuutta. | Radoille näytetään arvio ruuhkaisuudesta eri ajankohtien perusteella. | Keskitaso |
-| V7 | Sovellus käsittelee virhetilanteita. | Jos säätietojen hakeminen epäonnistuu, käyttäjälle näytetään ymmärrettävä virheilmoitus. | Keskitaso |
-| V8 | Sovellus toimii verkkoselaimessa. | Käyttäjä pystyy avaamaan sovelluksen julkaistusta linkistä ilman Pythonin tai ohjelmointiympäristön asentamista. | Korkea |
+| V1 | Säätietojen hakeminen | Näyttää lämpötilan, tuulen ja sateen. | Korkea |
+| V2 | Paikkakunnan valinta | Käyttäjä voi hakea ja valita paikkakunnan. | Korkea |
+| V3 | Sääarvio | Sovellus arvioi sään sopivuutta frisbeegolfiin. | Korkea |
+| V4 | Arvion perustelut | Käyttäjä näkee arvion taustalla olevat syyt. | Korkea |
+| V5 | Ratojen hakeminen | Näyttää lähialueen ratoja ja niiden tietoja. | Korkea |
+| V6 | Maksutiedot | Näyttää ratojen saatavilla olevat maksutiedot. | Korkea |
+| V7 | Virhetilanteet | Näyttää ymmärrettävän virheilmoituksen ongelmatilanteissa. | Keskitaso |
+| V8 | Verkkokäyttö | Sovellus toimii julkaistun verkkolinkin kautta. | Korkea |
+| V9 | Sääennuste | Näyttää valitun paikkakunnan neljän seuraavan tunnin sääennusteen. | Keskitaso |
 
 ## Rajaus ja vähimmäiskokonaisuus
 
-Projektin tavoitteena on toteuttaa yksinkertainen ja toimiva sovellus, joka kokoaa frisbeegolfiin liittyvät sää- ja ratatiedot yhteen paikkaan. Sovelluksen tulee olla helppokäyttöinen ja antaa käyttäjälle riittävästi tietoa pelikierroksen suunnittelua varten.
+Projektin tavoitteena on toteuttaa helppokäyttöinen verkkosovellus, joka yhdistää frisbeegolfin kannalta tärkeimmät säätiedot ja ratatiedot.
 
 **Projektissa toteutetaan:**
-
-- Ajankohtaisten säätietojen hakeminen Open-Meteo-säärajapinnasta.
-- Paikkakunnan valinta.
-- Lämpötilan, tuulen nopeuden, sateen ja pilvisyyden näyttäminen.
-- Sään sopivuuden arviointi frisbeegolfiin.
-- Sääarvion perusteleminen.
-- Paikkakunnan frisbeegolfratojen esittäminen.
-- Ratojen mahdollisten maksutietojen näyttäminen.
-- Ratojen arvioidun ruuhkaisuuden esittäminen.
-- Sovelluksen käyttöliittymän toteuttaminen Streamlitillä.
-- Sovelluksen julkaiseminen verkossa.
-
-**Projektin ulkopuolelle jätetään:**
-
-- Käyttäjätilit ja kirjautuminen.
-- Mobiilisovelluksen erillinen toteutus.
-- Puhelimeen lähetettävät ilmoitukset.
-- Frisbeegolfratojen karttapalvelu.
-- Käyttäjien reaaliaikaiset ruuhkatiedot.
-- Koneoppimiseen perustuva sääarviointi.
-- Laaja sääennusteiden tarkastelu useille tuleville päiville.
+- Paikkakuntien haku ja valinta.
+- Ajankohtaisten säätietojen hakeminen Open-Meteosta.
+- Lämpötilan, tuulen, sateen ja pilvisyyden näyttäminen.
+- Neljän seuraavan tunnin sääennuste.
+- Sään sopivuuden arviointi ja perustelut.
+- Lähialueen frisbeegolfratojen hakeminen.
+- Ratojen etäisyyksien, väylämäärien ja maksutietojen näyttäminen.
+- Linkit ratojen kartta- ja verkkosivutietoihin.
+- Käyttöliittymän toteutus ja sovelluksen julkaiseminen.
 
 ## Toteutuksen rakenne
 
-Sovellus toteutetaan Python-ohjelmointikielellä. Käyttöliittymä rakennetaan Streamlitillä, jonka avulla ohjelma voidaan myös julkaista verkkosovelluksena.
+Sovellus toteutetaan Pythonilla ja Streamlitillä. Ohjelma on jaettu kahteen pääasialliseen tiedostoon:
 
-Sovelluksen keskeiset teknologiat:
+- **app.py:** käyttöliittymä ja tietojen esittäminen.
+- **saa.py:** säätietojen ja frisbeegolfratojen hakeminen sekä sääarviointi.
 
-- **Python:** sovelluksen ohjelmointikieli.
-- **Streamlit:** käyttöliittymän toteutus.
-- **Open-Meteo API:** ajankohtaisten säätietojen hakeminen.
-- **Git ja GitHub:** projektin versionhallinta ja tiedostojen tallentaminen.
-- **Visual Studio Code:** ohjelmointiympäristö.
-- **Streamlit Community Cloud:** sovelluksen julkaiseminen verkossa.
-
-Ohjelma on jaettu eri tiedostoihin, jotta sen rakenne pysyy selkeänä. Säätietojen hakeminen tapahtuu erillisessä `saa.py`-tiedostossa ja käyttöliittymän sekä tietojen esittämisen toiminnallisuus on `app.py`-tiedostossa.
+Projektissa käytetään seuraavia teknologioita:
+- Python ja Streamlit.
+- Open-Meteo-säärajapinta.
+- DiscGolfAPI-ratatietojen hakemiseen.
+- Git ja GitHub versionhallintaan.
+- Visual Studio Code ohjelmointiin.
+- Streamlit Community Cloud julkaisemiseen.
 
 ## Oletukset, riskit ja mahdollinen data
 
-Sovellus hakee ajankohtaiset säätiedot Open-Meteo-palvelusta. Säätiedot perustuvat sääpalvelun tarjoamaan dataan, joten ne eivät välttämättä vastaa täysin paikan päällä vallitsevia olosuhteita.
+Säätiedot haetaan Open-Meteo-palvelusta ja ratatiedot DiscGolfAPI-rajapinnasta. Tietojen saatavuus ja ajantasaisuus riippuvat näistä ulkoisista palveluista.
 
-Sään sopivuuden arviointi perustuu ohjelmassa määriteltyihin sääolosuhteisiin. Arvio on suuntaa antava, eikä se huomioi kaikkien pelaajien henkilökohtaisia mieltymyksiä tai esimerkiksi yksittäisen frisbeegolfradan maaston vaikutuksia.
+Sääarvio perustuu ohjelmassa määriteltyihin lämpötila-, tuuli- ja sadeolosuhteisiin. Se on suuntaa antava eikä huomioi kaikkien pelaajien henkilökohtaisia mieltymyksiä.
 
-Ratojen ruuhkaisuusarviot perustuvat vuodenaikaan, viikonpäivään, kellonaikaan ja valoisan ajan pituuteen. Kyseessä ei ole reaaliaikainen tieto radalla olevista pelaajista, vaan ohjelman tekemä arvio siitä, milloin radalla voisi olla enemmän tai vähemmän pelaajia.
-
-Projektin mahdollisia riskejä:
-
-- Säärajapinta ei ole käytettävissä.
-- Internet-yhteys ei toimi.
-- Säätiedot eivät vastaa täysin todellisia olosuhteita.
-- Ruuhkaisuusarvio ei vastaa todellista radan tilannetta.
-- Sovelluksen verkkopalvelu voi olla hetkellisesti poissa käytöstä tai käynnistyä uudelleen käyttämättömyyden jälkeen.
+Keskeisiä riskejä ovat rajapintojen toimintahäiriöt, puutteelliset ratatiedot ja internet-yhteyden katkeaminen. Sovellus käsittelee virhetilanteita näyttämällä käyttäjälle virheilmoituksen.
 
 ## Merkittävät rajausmuutokset ja niiden syyt
 
-Projektin alkuperäinen suunnitelma sisälsi myös tulevien päivien sääennusteen tarkastelun. Toteutuksen aikana projektia rajattiin niin, että sovelluksen tärkeimmäksi toiminnoksi muodostui ajankohtaisten säätietojen tarkistaminen ja niiden perusteella tehtävä sääarvio.
+Projektin toteutuksen aikana alkuperäistä suunnitelmaa tarkennettiin. Laajan tulevien päivien sääennusteen sijaan keskityttiin ajankohtaiseen säähän ja neljän seuraavan tunnin ennusteeseen.
 
-Lisäksi sovellukseen lisättiin paikkakuntakohtaiset frisbeegolfradat ja niiden arvioitu ruuhkaisuus. Tämä teki sovelluksesta käytännöllisemmän frisbeegolfia harrastavalle käyttäjälle, sillä sääolosuhteiden lisäksi käyttäjä voi tarkastella myös mahdollisia pelipaikkoja.
+Lisäksi sovellukseen lisättiin frisbeegolfratojen haku, etäisyystiedot ja maksutiedot. Näin sovellus auttaa käyttäjää sekä arvioimaan pelaamissään että löytämään sopivan pelipaikan.
 
-Rajauksia tehtiin, jotta projektin kokonaisuus pysyisi toteutuskelpoisena käytettävissä olevan ajan puitteissa ja jotta tärkeimmät toiminnot saataisiin toteutettua ja testattua kunnolla.
+Rajaukset tehtiin, jotta tärkeimmät ominaisuudet saatiin toteutettua toimivasti käytettävissä olevan ajan puitteissa.
 
-Projektin lopullisena tavoitteena on toimiva ja helposti käytettävä Frisbeegolf-säävahti, joka auttaa käyttäjää suunnittelemaan pelikierrosta ja valitsemaan sopivan pelipaikan.
-
+Projektin lopputuloksena on verkkoselaimessa toimiva Frisbeegolf-säävahti, joka yhdistää sää- ja ratatiedot samaan palveluun.
