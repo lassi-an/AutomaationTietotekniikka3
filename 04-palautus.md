@@ -6,7 +6,7 @@ Lassi Antikainen, 24.11.2026
 
 ## Videolinkki
 
-Lisää oppilaitoksen OneDriven katselulinkki 5–7 minuutin videoon. Varmista opettajan ja määrättyjen vertaisarvioijien pääsy.
+(https://metropoliafi-my.sharepoint.com/:v:/g/personal/lassiant_metropolia_fi/IQBMvaiQdnNFQqjC7FOxDz-2AYc0yModUXzHK5Bmrf2AWtc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=bNelwi)
 
 ## Arvioitavan kokonaisuuden löytäminen
 
