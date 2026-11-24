@@ -17,9 +17,9 @@ Jos sovelluksen haluaa avata paikallisesti niin testaus ja validointi sivulla on
 
 ## Palautuksen tarkistus
 
-- [ ] Dokumentit ja video vastaavat arvioitavaa versiota.
-- [ ] Käynnistys ja testiohje on kokeiltu.
-- [ ] Molempien tekeminen on näkyvissä.
-- [ ] Repon ja videon käyttöoikeudet toimivat.
-- [ ] Tekijät, repon URL, täydellinen commit-tunniste ja videolinkki ilmoitetaan Moodleen commitin valmistuttua.
-- [ ] Henkilökohtainen reflektio ja vertaisarvioinnit palautetaan erikseen Moodleen.
+- [x ] Dokumentit ja video vastaavat arvioitavaa versiota.
+- [ x] Käynnistys ja testiohje on kokeiltu.
+- [ x] Molempien tekeminen on näkyvissä.
+- [x ] Repon ja videon käyttöoikeudet toimivat.
+- [x ] Tekijät, repon URL, täydellinen commit-tunniste ja videolinkki ilmoitetaan Moodleen commitin valmistuttua.
+- [x ] Henkilökohtainen reflektio ja vertaisarvioinnit palautetaan erikseen Moodleen.
