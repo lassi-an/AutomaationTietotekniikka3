@@ -2,37 +2,37 @@
 
 ## Todellisuudessa käytetty alkuprompt
 
-Kysyin AI:lta ehdotuksia aiheista opettajan sähköpostin perusteella
+Kysyin ChatGPT:ltä projekti-ideoita opettajan sähköpostin perusteella. Keskustelun pohjalta valitsin aiheeksi Frisbeegolf-säävahdin.
 
 ## Jatkuva työskentelyprosessi
 
-Projektia tehdään vaiheittain ChatGPT:n avustuksella. Ensin määriteltiin projektin idea, käyttäjän tarve ja ohjelmiston tärkeimmät ominaisuudet.
+Projektia kehitetään vaiheittain ChatGPT:n avustuksella. AI:ta käytetään ideointiin, suunnitteluun, Python-koodin kirjoittamiseen, käyttöliittymän kehittämiseen ja virheiden selvittämiseen.
 
-Työ pilkotaan pieniin osiin, jotta jokainen vaihe voidaan ymmärtää ja tarkistaa ennen seuraavaan siirtymistä. ChatGPT:ltä pyydetään apua esimerkiksi Python-koodin kirjoittamiseen, virheiden selvittämiseen ja testien suunnitteluun.
+Työ jaetaan pieniin osiin, jotta koodia ja toimintoja voidaan tarkistaa ja testata jokaisessa vaiheessa. Lopulliset ratkaisut ja muutokset teen itse.
 
 ## Käytetyt työkalut
 
-| **Työkalu** | **Malli tai versio** | **Käyttötarkoitus** | **Tarkistustapa** |
+| Työkalu | Malli tai versio | Käyttötarkoitus | Tarkistustapa |
 |---|---|---|---|
-| ChatGPT | GPT-6 | Projektin ideointi, suunnittelu, Python-koodin kirjoittamisen tukeminen, käyttöliittymän kehittäminen ja virheiden selvittäminen | Ehdotukset tarkistetaan itse, koodia muokataan tarvittaessa ja ohjelman toiminta testataan käytännössä |
-| GitHub | Git-versionhallinta | Projektitiedostojen tallentaminen, muutosten hallinta ja projektin jakaminen | Tarkistetaan, että tiedostot ovat repositoriossa ja muutokset tallentuvat oikein |
-| Python | 3.13 | Ohjelmiston toteuttaminen ja suorittaminen | Ohjelma käynnistetään ja sen toimintaa testataan käytännössä |
-| Streamlit | Ei tiedossa | Käyttöliittymän toteuttaminen ja sovelluksen julkaiseminen verkossa | Tarkistetaan käyttöliittymän toiminta selaimessa sekä julkaistun sovelluksen toimivuus |
-| Visual Studio Code | Ei tiedossa | Python-koodin kirjoittaminen, tiedostojen hallinta ja projektin kehittäminen | Tarkistetaan koodin toiminta suorittamalla sovellus |
-| Open-Meteo API | API | Ajankohtaisten säätietojen hakeminen sovellukseen | Tarkistetaan, että sovellus hakee ja näyttää säätiedot oikein eri paikkakunnilla |
-
+| ChatGPT | GPT-6 | Ideointi, suunnittelu, koodausapu ja virheiden selvittäminen | Ehdotukset tarkistetaan ja koodi testataan itse |
+| Python | 3.13 | Sovelluksen ohjelmointi | Sovellus käynnistetään ja testataan |
+| Streamlit | Käytössä oleva versio | Käyttöliittymän toteutus | Testataan selaimessa |
+| Visual Studio Code | Käytössä oleva versio | Koodin kirjoittaminen ja projektin hallinta | Testataan ohjelman toiminta |
+| Git ja GitHub | Git-versionhallinta | Muutosten tallentaminen ja projektin julkaiseminen | Tarkistetaan commitit ja repositorio |
+| Open-Meteo API | API | Säätietojen hakeminen | Tarkistetaan säätietojen näkyminen eri paikkakunnilla |
+| DiscGolfAPI | API | Frisbeegolfratojen hakeminen | Tarkistetaan ratojen nimet ja tiedot sovelluksessa |
+| Streamlit Community Cloud | Verkkopalvelu | Sovelluksen julkaiseminen | Testataan julkaistua verkkosovellusta |
 
 ## Konkreettinen tarkistusesimerkki
 
-Projektin suunnitteluvaiheessa ChatGPT ehdotti useita ominaisuuksia ja teknologioita Frisbeegolf-säävahtiin. Alkuperäiseen suunnitelmaan kuului esimerkiksi sääennusteen esittäminen kuvaajana.
+ChatGPT ehdotti projektin aikana erilaisia ominaisuuksia ja toteutustapoja. Ehdotuksia arvioitiin projektin tavoitteiden ja käytettävissä olevan ajan perusteella.
 
-Projektin pitämiseksi riittävän yksinkertaisena päätettiin jättää kuvaajat ensimmäisestä versiosta pois. Näin voidaan keskittyä tärkeimpiin ominaisuuksiin: säätilan hakemiseen, lämpötilan, tuulen ja sateen näyttämiseen sekä frisbeegolfiin sopivien olosuhteiden arviointiin.
+Esimerkiksi sovellukseen lisättiin ajankohtaisten säätietojen lisäksi neljän seuraavan tunnin ennuste sekä frisbeegolfratojen haku. Ehdotettuja ominaisuuksia muokattiin tarpeen mukaan, ja niiden toiminta tarkistettiin käytännössä.
 
-Ehdotusta rajattiin siis projektin tavoitteiden ja käytettävissä olevan ajan perusteella. Lisää ominaisuuksia olisi voinut tehdä, mutta työviikon aikana ei kerennyt enempää.
+Myös virhetilanteita selvitettiin ChatGPT:n avulla. Esimerkiksi sovelluksen julkaisussa ilmenneitä GitHub- ja Streamlit-ongelmia ratkaistiin vaiheittain. Lopulliset muutokset testattiin itse.
 
-## Työnjako ja kummankin konkreettinen osuus
+## Työnjako ja oma osuus
 
-Teen itse koko työn
+Teen projektin itsenäisesti.
 
-Työn etenemistä seurataan GitHub-repositorion muutosten ja commit-merkintöjen avulla. Näistä voidaan tarkistaa, mitä kumpikin tekijä on tehnyt projektiin.
-
+ChatGPT toimii työskentelyn tukena, mutta tarkistan ehdotukset ja päätän itse, mitkä muutokset otan käyttöön.
