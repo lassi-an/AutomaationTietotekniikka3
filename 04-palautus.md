@@ -2,7 +2,7 @@
 
 ## Tekijät ja palautuspäivä
 
-Lassi Antikainen, 22.11.2026
+Lassi Antikainen, 24.11.2026
 
 ## Videolinkki
 
@@ -10,7 +10,10 @@ Lisää oppilaitoksen OneDriven katselulinkki 5–7 minuutin videoon. Varmista o
 
 ## Arvioitavan kokonaisuuden löytäminen
 
-Sovelluksen linkki on README:ssä ja pitää huomioida, että sovelluksen avaaminen saattaa kestää hieman, jos se on ollut käyttämättä.
+Sovelluksen linkki on README:ssä myös ja pitää huomioida, että sovelluksen avaaminen saattaa kestää hieman, jos se on ollut käyttämättä. 
+https://fribeegolfsaavahti.streamlit.app/
+
+Jos sovelluksen haluaa avata paikallisesti niin testaus ja validointi sivulla on siihen komennot.
 
 ## Palautuksen tarkistus
 
