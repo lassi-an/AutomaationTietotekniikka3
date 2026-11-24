@@ -13,4 +13,6 @@ Projektin tarkoituksena on tehdä sovellus, joka kertoo, millaiset sääolosuhte
 
 **Huomio sovelluksen avaamisesta:**
 
-Sovelluksen ensimmäisessä avaamisessa saattaa joutua odottamaan hetken. Streamlit voi sulkea käyttämättömän sovelluksen automaattisesti, mutta se käynnistyy uudelleen, kun linkki avataan. Sovelluksen pitäisi tämän jälkeen toimia normaalisti.
+Sovelluksen ensimmäisessä avaamisessa saattaa joutua odottamaan hetken. Streamlit voi sulkea käyttämättömän sovelluksen automaattisesti, mutta se käynnistyy uudelleen, kun linkki avataan. Sovelluksen pitäisi tämän jälkeen toimia normaalisti. 
+
+Paikalliseen avaamiseen löytyy komento testaus ja validointi sivulla, mutta sitä varten pitää asentaa ohjelmia jos se ei suoraan toimi.
