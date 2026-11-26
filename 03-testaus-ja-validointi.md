@@ -1,5 +1,9 @@
 # Testaus ja validointi
 
+## Videolla testatut toiminnat
+
+Videolla testasin muutamia paikkakuntia ja niiden säätietojen hakemista. Sovellus löytää hyvin radat ja säätiedot, mutta se ei esimerkiksi sisällytä kaikkia ratoja paikkakunnilta, kuten Hervannan frisbeegolf rata. Syy voi olla, joko radan uutuus tai muuten puuttuu tietokannasta. Myös itse lisäsin sovellukseen yhden uuden radan Espooseen, joten niitä voi manuaalisesti lisätä. Myöskään ei näy sovelluksessa onko radoilla ruuhkaisaa juuri kyseisenä aikana kun käyttäjä hakee säätietoja. 
+
 ## Testien suoritusohje
 
 Sovellusta testataan käynnistämällä se paikallisesti ja kokeilemalla käyttöliittymän toimintoja. Lisäksi testataan julkaistua verkkoversiota.
