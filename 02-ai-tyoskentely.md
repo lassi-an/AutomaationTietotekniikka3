@@ -4,6 +4,10 @@
 
 Kysyin ChatGPT:ltä projekti-ideoita opettajan sähköpostin perusteella. Keskustelun pohjalta valitsin aiheeksi Frisbeegolf-säävahdin.
 
+Alkupromt
+
+projektin kokonaisuus idea voisi olla säävahti josta voi katsoa onko hyvä sää frisbeegolffiin
+
 ## Jatkuva työskentelyprosessi
 
 Projektia kehitetään vaiheittain ChatGPT:n avustuksella. AI:ta käytetään ideointiin, suunnitteluun, Python-koodin kirjoittamiseen, käyttöliittymän kehittämiseen ja virheiden selvittämiseen.
